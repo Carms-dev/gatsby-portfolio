@@ -38,7 +38,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2, h3 {
-    width: fit-content;
     font-size: 3rem;
     text-transform: lowercase;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
@@ -49,8 +48,8 @@ const GlobalStyles = createGlobalStyle`
     width: max-content;
   }
   h3 {
-    font-size: 2rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--light-blue) 35%);
+    font-size: 2.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
     margin: 30px auto;
   }
   h4 {
@@ -66,7 +65,7 @@ const GlobalStyles = createGlobalStyle`
   }
   .container {
     max-width: 1280px;
-    padding: 0 20px;
+    padding: 20px;
     margin: 0 auto;
   }
   button, .btn {
@@ -83,6 +82,7 @@ const GlobalStyles = createGlobalStyle`
     border-color: rgba(255, 198, 0, 0.7);
     ;
   }
+
 `;
 
 export default GlobalStyles;
