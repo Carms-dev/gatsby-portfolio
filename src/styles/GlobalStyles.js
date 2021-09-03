@@ -25,6 +25,9 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  *:focus {
+    outline: 0 !important;
+  }
   body {
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
@@ -50,7 +53,16 @@ const GlobalStyles = createGlobalStyle`
   h3 {
     font-size: 2.5rem;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
-    margin: 30px auto;
+  }
+  .btn-text {
+    text-transform: lowercase;
+    line-height: 90%;
+    padding: 0 10px;
+    width: max-content;
+    font-size: 2.5rem;
+  }
+  .btn-text.active {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
   }
   h4 {
     font-size: 3rem;
@@ -63,12 +75,17 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: var(--black);
   }
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
   .container {
     max-width: 1280px;
     padding: 20px;
     margin: 0 auto;
   }
-  button, .btn {
+  .btn {
     text-transform: uppercase;
     font-size: 2rem;
     padding: 6px 20px 3px 20px;
@@ -77,12 +94,11 @@ const GlobalStyles = createGlobalStyle`
     background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
   }
-  button:hover, .btn:hover {
+  .btn:hover {
     background-color: rgba(255, 198, 0, 0.5);
     border-color: rgba(255, 198, 0, 0.7);
     ;
   }
-
 `;
 
 export default GlobalStyles;

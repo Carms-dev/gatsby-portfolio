@@ -16,6 +16,14 @@
     "favorite": true
   },
   {
+    "icon": "logos:python",
+    "name": "Python"
+  },
+  {
+    "icon": "logos:php",
+    "name": "PHP"
+  },
+  {
     "icon": "logos:gatsby",
     "name": "Gatsby",
     "favorite": true
@@ -97,11 +105,18 @@
   },
   {
     "icon": "logos:apollostack",
-    "name": "Apollo Client"
+    "name": "Apollo Client",
+    "favorite": true
   },
   {
     "icon": "simple-icons:mongodb",
     "name": "MongoDB",
-    "color": "#13aa52"
+    "color": "#13aa52",
+    "favorite": true
+  },
+  {
+    "icon": "logos:keystonejs",
+    "name": "Keystone",
+    "favorite": true
   }
 ]

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import * as React from 'react';
 import styled from 'styled-components';
 import Icons from '../components/Icons';
 
@@ -23,6 +23,14 @@ const AboutStyles = styled.section`
     grid-gap: 2rem;
   }
 
+  .btns-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      margin: 3rem 1rem;
+    }
+  }
   @media (min-width: 640px) {
     .three-forth {
       grid-template-columns: 3fr 1fr;
@@ -36,6 +44,12 @@ const AboutStyles = styled.section`
 export default function IndexPage({ data }) {
   const favorites = allTools.filter((tool) => tool.favorite);
 
+  const [favoritesOnly, setFavoritesOnly] = useState(true);
+
+  const handleClick = (ev) => {
+    const isFavoriteOnly = ev.target.dataset.favorites === 'true';
+    setFavoritesOnly(isFavoriteOnly);
+  };
   return (
     <Layout>
       <Seo title="Carms Ng | Full Stack Developer" />
@@ -52,7 +66,7 @@ export default function IndexPage({ data }) {
       <AboutStyles id="about" className="container">
         <h2>About</h2>
         <div className="three-forth">
-          <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack RoR Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
+          <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
           <a
             className="btn"
             href={data.file.publicURL}
@@ -63,10 +77,28 @@ export default function IndexPage({ data }) {
           </a>
         </div>
 
-        <div className="container fifty-fifty">
+        <div className="fifty-fifty">
           <div>
-            <h3>Favorite Tools</h3>
-            <Icons icons={favorites} />
+            <div className="btns-text">
+              <button
+                onClick={handleClick}
+                className={`btn-text ${favoritesOnly ? 'active' : ''}`}
+                type="button"
+                data-favorites="true"
+              >
+                Favorite Tools
+              </button>
+              <p>/</p>
+              <button
+                onClick={handleClick}
+                className={`btn-text ${favoritesOnly ? '' : 'active'}`}
+                type="button"
+                data-favorites="false"
+              >
+                Tool Box
+              </button>
+            </div>
+            <Icons icons={favoritesOnly ? favorites : allTools} />
           </div>
           <div>
             <h3>guiding values</h3>
