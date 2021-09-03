@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import YoungSerif from '../assets/fonts/YoungSerif/YoungSerif-Regular.woff2'
 import OverpassLight from '../assets/fonts/Overpass/Overpass-Light.ttf'
-import TekoRegular from '../assets/fonts/Teko/Teko-Regular.ttf'
+import TekoLight from '../assets/fonts/Teko/Teko-Light.ttf'
 
 const Typography = createGlobalStyle`
   @font-face {
@@ -18,8 +18,8 @@ const Typography = createGlobalStyle`
   }
   @font-face {
     font-family: 'Teko';
-    src: url(${TekoRegular});
-    font-weight: normal;
+    src: url(${TekoLight});
+    font-weight: 300;
     font-style: normal;
   }
 `

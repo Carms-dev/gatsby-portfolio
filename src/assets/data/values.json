@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "cil:heart",
+    "name": "Integrity",
+    "color": "red"
+  },
+  {
+    "icon": "emojione-monotone:open-hands",
+    "name": "Openness",
+    "color": "#ffc600"
+  },
+  {
+    "icon": "bi:tree",
+    "name": "Growth",
+    "color": "green"
+  },
+  {
+    "icon": "bx:bx-cube",
+    "name": "Gatsby",
+    "color": "#1F4788"
+  },
+  {
+    "icon": "cil:triangle",
+    "name": "Minimalism"
+  }
+]
