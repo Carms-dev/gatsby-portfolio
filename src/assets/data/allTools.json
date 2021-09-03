@@ -1,0 +1,107 @@
+[
+  {
+    "icon": "mdi:language-ruby-on-rails",
+    "name": "Ruby On Rails",
+    "color": "#CC0000",
+    "favorite": true
+  },
+  {
+    "icon": "logos:javascript",
+    "name": "ES6",
+    "favorite": true
+  },
+  {
+    "icon": "logos:react",
+    "name": "React",
+    "favorite": true
+  },
+  {
+    "icon": "logos:gatsby",
+    "name": "Gatsby",
+    "favorite": true
+  },
+  {
+    "icon": "logos:graphql",
+    "name": "GraphQL",
+    "favorite": true
+  },
+  {
+    "icon": "cib:next-js",
+    "name": "Next.js"
+  },
+  {
+    "icon": "logos:netlify",
+    "name": "Netlify",
+    "favorite": true
+  },
+  {
+    "icon": "logos:sanity",
+    "name": "Sanity Studio",
+    "favorite": true
+  },
+  {
+    "icon": "simple-icons:styledcomponents",
+    "name": "styled components",
+    "favorite": true
+  },
+  {
+    "icon": "logos:figma",
+    "name": "Figma",
+    "favorite": true
+  },
+  {
+    "icon": "logos:tailwindcss-icon",
+    "name": "tailwind"
+  },
+  {
+    "icon": "logos:sass",
+    "name": "Sass",
+    "favorite": true
+  },
+  {
+    "icon": "logos:postgresql",
+    "name": "PostgreSQL"
+  },
+  {
+    "icon": "logos:wordpress-icon",
+    "name": "WordPress"
+  },
+  {
+    "icon": "logos:mapbox-icon",
+    "name": "Mapbox"
+  },
+  {
+    "icon": "logos:salesforce",
+    "name": "Salesforce"
+  },
+  {
+    "icon": "logos:stripe",
+    "name": "stripe"
+  },
+  {
+    "icon": "logos:css-3",
+    "name": "CSS3"
+  },
+  {
+    "icon": "logos:html-5",
+    "name": "HTML5"
+  },
+  {
+    "icon": "logos:heroku-icon",
+    "name": "Heroku"
+  },
+  {
+    "icon": "logos:cloudinary",
+    "name": "Cloudinary",
+    "favorite": true
+  },
+  {
+    "icon": "logos:apollostack",
+    "name": "Apollo Client"
+  },
+  {
+    "icon": "simple-icons:mongodb",
+    "name": "MongoDB",
+    "color": "#13aa52"
+  }
+]
