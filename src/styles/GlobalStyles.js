@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: inherit;
     margin: 0;
+    padding: 0;
   }
   body {
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -43,8 +44,7 @@ const GlobalStyles = createGlobalStyle`
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
     line-height: 90%;
     padding: 0 10px;
-    margin-bottom: 1rem;
-    margin: 0 auto 1rem auto;
+    margin: 3rem auto;
     width: max-content;
   }
   h3 {
