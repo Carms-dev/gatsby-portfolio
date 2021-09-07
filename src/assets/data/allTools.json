@@ -1,13 +1,13 @@
 [
   {
     "icon": "mdi:language-ruby-on-rails",
-    "name": "Ruby On Rails",
+    "name": "Ruby on Rails",
     "color": "#CC0000",
     "favorite": true
   },
   {
     "icon": "logos:javascript",
-    "name": "ES6",
+    "name": "JavaScript",
     "favorite": true
   },
   {
@@ -59,7 +59,7 @@
   },
   {
     "icon": "logos:tailwindcss-icon",
-    "name": "tailwind"
+    "name": "tailwindcss"
   },
   {
     "icon": "logos:sass",
@@ -93,6 +93,10 @@
   {
     "icon": "logos:html-5",
     "name": "HTML5"
+  },
+  {
+    "icon": "vscode-icons:file-type-xml",
+    "name": "XML"
   },
   {
     "icon": "logos:heroku-icon",
