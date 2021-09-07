@@ -1,6 +1,6 @@
 [
   {
-    "title": "GEGI law",
+    "title": "GEGI Law",
     "description": "Resource hub created to provide legal information on filing Human Rights Compliant as a last resort to advocate for gender expression and gender identity rights",
     "roles": ["UI/UX", "Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
@@ -33,6 +33,17 @@
     "isHobby": false
   },
   {
+    "title": "What is a weed?",
+    "description": "Debuted at Concordia University's Leonard & Bina Ellen Art Gallery in 2021, this website is designed by 2 artists, Eve Tagny (Tiohtiá:ke) & Io Makandal (South Africa). It was a blast to build!",
+    "roles": ["Develop"],
+    "stack": ["Gatsby", "styled components", "tailwindcss"],
+    "image": "weed.png",
+    "demo": "weed.gif",
+    "website": "http://ellengallery.concordia.ca/what-is-a-weed/",
+    "source": "https://github.com/Carms-dev/gatsby-weed",
+    "isHobby": false
+  },
+  {
     "title": "TechnoLibre",
     "description": "Develop UI elements & blocks to improve existing website builder + Company website revamp for Montreal-based startup",
     "roles": ["Design", "Develop"],
@@ -44,18 +55,7 @@
     "isHobby": false
   },
   {
-    "title": "what is a weed?",
-    "description": "Debuted at Concordia University's Leonard & Bina Ellen Art Gallery in 2021, this website is designed by 2 artists, Eve Tagny (Tiohtiá:ke) & Io Makandal (South Africa). It was a blast to build!",
-    "roles": ["Develop"],
-    "stack": ["Gatsby", "styled components", "tailwindcss"],
-    "image": "weed.png",
-    "demo": "weed.gif",
-    "website": "http://ellengallery.concordia.ca/what-is-a-weed/",
-    "source": "https://github.com/Carms-dev/gatsby-weed",
-    "isHobby": false
-  },
-  {
-    "title": "missing justice",
+    "title": "Missing Justice",
     "description": "Website built for a campaign working in solidarity with Missing and Murdered Indigenous Women, Girls, and 2-Spirit People.",
     "roles": ["Project Manage", "Develop"],
     "stack": ["Sass", "HTML5"],
@@ -76,9 +76,9 @@
     "isHobby": true
   },
   {
-    "title": "newcomerwerk!",
+    "title": "Newcomerwerk!",
     "description": "Marketplace prototype for newcomers to access work with ease! Celebrate results. Not Papers.",
-    "roles": ["Development"],
+    "roles": ["Develop"],
     "stack": ["Ruby on Rails", "JavaScript", "Sass", "PostgreSQL", "Mapbox", "Heroku"],
     "image": "newcomerwerk.png",
     "demo" : "newcomerwerk.gif",
