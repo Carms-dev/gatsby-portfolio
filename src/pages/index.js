@@ -1,41 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import * as React from 'react';
 import styled from 'styled-components';
 import Icons from '../components/Icons';
 
 import Layout from '../components/Layout';
 import Seo from '../components/seo';
-import { HeroStyles } from '../styles/IndexPageStyles';
+import { HeroStyles, AboutStyles, PortfolioStyles } from '../styles/IndexPageStyles';
+import Projects from '../components/Projects';
 
 // Data
 import allTools from '../assets/data/allTools.json';
 import values from '../assets/data/values.json';
-
-const AboutStyles = styled.section`
-  .three-forth {
-    display: grid;
-    place-items: center;
-    grid-gap: 2rem;
-  }
-  .fifty-fifty {
-    display: grid;
-    grid-gap: 2rem;
-  }
-
-  @media (min-width: 640px) {
-    .three-forth {
-      grid-template-columns: 3fr 1fr;
-    }
-    .fifty-fifty {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-`;
+import projects from '../assets/data/projects.json';
 
 export default function IndexPage({ data }) {
   const favorites = allTools.filter((tool) => tool.favorite);
+  const workProjects = projects.filter((project) => !project.isHobby);
+  const hobbies = projects.filter((project) => project.isHobby);
 
+  const [favoritesOnly, setFavoritesOnly] = useState(true);
+
+  const handleClick = (ev) => {
+    const isFavoriteOnly = ev.target.dataset.favorites === 'true';
+    setFavoritesOnly(isFavoriteOnly);
+  };
   return (
     <Layout>
       <Seo title="Carms Ng | Full Stack Developer" />
@@ -52,7 +41,8 @@ export default function IndexPage({ data }) {
       <AboutStyles id="about" className="container">
         <h2>About</h2>
         <div className="three-forth">
-          <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack RoR Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
+          {/* eslint-disable-next-line max-len */}
+          <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
           <a
             className="btn"
             href={data.file.publicURL}
@@ -63,10 +53,28 @@ export default function IndexPage({ data }) {
           </a>
         </div>
 
-        <div className="container fifty-fifty">
+        <div className="fifty-fifty">
           <div>
-            <h3>Favorite Tools</h3>
-            <Icons icons={favorites} />
+            <div className="btns-text">
+              <button
+                onClick={handleClick}
+                className={`btn-text ${favoritesOnly ? 'active' : ''}`}
+                type="button"
+                data-favorites="true"
+              >
+                Favorite Tools
+              </button>
+              <p>/</p>
+              <button
+                onClick={handleClick}
+                className={`btn-text ${favoritesOnly ? '' : 'active'}`}
+                type="button"
+                data-favorites="false"
+              >
+                Tool Box
+              </button>
+            </div>
+            <Icons icons={favoritesOnly ? favorites : allTools} />
           </div>
           <div>
             <h3>guiding values</h3>
@@ -76,14 +84,19 @@ export default function IndexPage({ data }) {
       </AboutStyles>
 
       {/* Portfolio */}
-      <div>
-        <h2>portfolio</h2>
-      </div>
+      <PortfolioStyles id="portfolio" className="container">
+        <div>
+          <h2>portfolio</h2>
+          <Projects projects={workProjects} allTools={allTools} />
+        </div>
+        <div>
+          <h2>hobby</h2>
+          <Projects projects={hobbies} allTools={allTools} />
+        </div>
+
+      </PortfolioStyles>
 
       {/* HOBBY */}
-      <div>
-        <h2>hobby</h2>
-      </div>
 
       {/* CONTACT */}
       <div>
