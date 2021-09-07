@@ -73,6 +73,10 @@ const AboutStyles = styled.section`
   }
 `;
 
-const PortfolioStyles = styled.section``;
+const PortfolioStyles = styled.section`
+  h2 {
+    margin-bottom: 3rem;
+  }
+`;
 
 export { HeroStyles, AboutStyles, PortfolioStyles };

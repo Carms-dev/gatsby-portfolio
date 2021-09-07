@@ -17,6 +17,33 @@ const ProjectsStyles = styled.div`
       margin-bottom: 0;
     }
   }
+  .project-media {
+    position: relative;
+    display: grid;
+    .project-img {
+      transition: all 1s ease;
+    }
+    .project-gif {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1s ease;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+  .project-media:hover .project-gif {
+    visibility: visible;
+    opacity: 1;
+  }
+  .project-media:hover .project-img {
+    visibility: hidden;
+    opacity: 0;
+  }
   .project-info {
     padding: 2rem 0;
     display: grid;
@@ -46,12 +73,13 @@ const ProjectsStyles = styled.div`
     .project {
       margin: 5rem 0;
       grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
     }
   }
 `;
 
 export default function Projects({ projects, allTools }) {
-  const { projectImages } = useStaticQuery(
+  const { projectImages, projectGifs } = useStaticQuery(
     graphql`
       {
         projectImages: allFile(filter: {relativeDirectory: {eq: "projects"}}) {
@@ -67,26 +95,35 @@ export default function Projects({ projects, allTools }) {
             }
           }
         }
+        projectGifs: allFile(filter: { extension: { eq: "gif" } }) {
+          nodes {
+            publicURL
+            base
+          }
+        }
       }
     `,
   );
 
+  console.log(projectGifs);
   return (
     <ProjectsStyles>
       {projects.map((project) => {
         const image = projectImages.nodes.find((node) => node.base === project.image);
         const icons = allTools.filter((tool) => project.stack.includes(tool.name));
-
+        const demo = projectGifs.nodes.find((node) => node.base === project.demo);
 
         return (
           <div key={project.title} className="project">
-            <div>
+            <div className="project-media">
               <GatsbyImage
                 image={image?.childImageSharp.gatsbyImageData}
                 alt={project.title}
                 imgStyle={{ objectFit: 'contain' }}
                 style={{ maxHeight: '50vh' }}
+                className="project-img"
               />
+              {demo && <img className="project-gif" src={demo.publicURL} alt={`${project.title} demo gif`} />}
             </div>
             <div className="project-info">
               <h3>{project.title}</h3>
