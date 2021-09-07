@@ -2,9 +2,10 @@
   {
     "title": "GEGI law",
     "description": "Resource hub created to provide legal information on filing Human Rights Compliant as a last resort to advocate for gender expression and gender identity rights",
-    "roles": ["UI/UX", "Design", "Development"],
+    "roles": ["UI/UX", "Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
     "image": "gegi-law.png",
+    "demo": "gegi-law.gif",
     "website": "https://law.gegi.ca/",
     "source": "https://github.com/Carms-dev/gegi-law-gatsby-netlify",
     "isHobby": false
@@ -12,9 +13,10 @@
   {
     "title": "GEGI Project",
     "description": "Educational tool to guide students to advocate for their gender expression and gender identity human rights in hopes of closing the gap between the changing legal landscape and students' realities",
-    "roles": ["Partial Revamp", "Development"],
+    "roles": ["Partial Revamp", "Develop"],
     "stack": ["WordPress", "PHP", "JavaScript", "CSS3"],
     "image": "gegi.png",
+    "demo": "gegi.gif",
     "website": "https://www.gegi.ca/",
     "source": "https://github.com/Carms-dev/gegi-avada-child-theme",
     "isHobby": false
@@ -22,9 +24,10 @@
   {
     "title": "Coderbunker Canada",
     "description": "Bilingual website for a Quebec City-based freelancer collective",
-    "roles": ["Design", "Development"],
+    "roles": ["Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
     "image": "coderbunker.png",
+    "demo": "coderbunker.gif",
     "website": "https://coderbunker.ca/",
     "source": "https://github.com/coderbunker/coderbunker.ca",
     "isHobby": false
@@ -32,9 +35,10 @@
   {
     "title": "TechnoLibre",
     "description": "Develop UI elements & blocks to improve existing website builder + Company website revamp for Montreal-based startup",
-    "roles": ["Design", "Development"],
+    "roles": ["Design", "Develop"],
     "stack": ["Python", "XML", "JavaScript", "Sass"],
     "image": "technolibre.png",
+    "demo": "technolibre.gif",
     "website": "http://ellengallery.concordia.ca/what-is-a-weed/",
     "source": "https://github.com/ERPLibre/erplibre_theme_addons/tree/12.0",
     "isHobby": false
@@ -42,7 +46,7 @@
   {
     "title": "what is a weed?",
     "description": "Debuted at Concordia University's Leonard & Bina Ellen Art Gallery in 2021, this website is designed by 2 artists, Eve Tagny (Tiohtiá:ke) & Io Makandal (South Africa). It was a blast to build!",
-    "roles": ["Development"],
+    "roles": ["Develop"],
     "stack": ["Gatsby", "styled components", "tailwindcss"],
     "image": "weed.png",
     "demo": "weed.gif",
@@ -53,19 +57,20 @@
   {
     "title": "missing justice",
     "description": "Website built for a campaign working in solidarity with Missing and Murdered Indigenous Women, Girls, and 2-Spirit People.",
-    "roles": ["Project Management", "Development"],
+    "roles": ["Project Manage", "Develop"],
     "stack": ["Sass", "HTML5"],
     "image": "missing-justice.png",
+    "demo": "missing-justice.gif",
     "website": "https://missingjustice.ca/",
-    "source": "",
     "isHobby": false
   },
   {
     "title": "day-o",
     "description": "Climate Habit Builder prototype. Wanna Challenge yourself and/or a buddy? Track your impact today!",
-    "roles": ["UI/UX", "Design", "Development"],
+    "roles": ["UI/UX", "Design", "Develop"],
     "stack": ["Ruby on Rails", "JavaScript", "Sass", "PostgreSQL", "Heroku"],
     "image": "dayo.png",
+    "demo": "dayo.gif",
     "website": "https://day-o.herokuapp.com/",
     "source": "https://github.com/carms-dev/day-o",
     "isHobby": true
