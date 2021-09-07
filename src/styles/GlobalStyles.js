@@ -11,8 +11,8 @@ const GlobalStyles = createGlobalStyle`
     --blue: #087E8B;
     --grey: #424C55;
     --gray: var(--grey);
-    --light: #E8F7EE;
-    --grey-light: #FAFAFA;
+    --light: #FAFAFA;
+    --grey-light: #F2f3f4;
     --gray-light: var(--grey-light);
     --black: #393939;
   }
@@ -32,7 +32,6 @@ const GlobalStyles = createGlobalStyle`
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
-    font-size: 1.5rem;
     line-height: 1.6;
   }
   h1, h2, h3, h4, h5, h6, a, button {
@@ -40,18 +39,15 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.2;
     font-weight: 300;
   }
-
   h2, h3 {
-    font-size: 3rem;
     text-transform: lowercase;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
     line-height: 90%;
     padding: 0 10px;
-    margin: 3rem auto;
+    margin: 0 auto;
     width: max-content;
   }
   h3 {
-    font-size: 2.5rem;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
   }
   .btn-text {
@@ -59,17 +55,12 @@ const GlobalStyles = createGlobalStyle`
     line-height: 90%;
     padding: 0 10px;
     width: max-content;
-    font-size: 2.5rem;
   }
   .btn-text.active {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
   }
-  h4 {
-    font-size: 3rem;
-  }
   p {
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5rem;
   }
   a {
     text-decoration: none;
@@ -98,6 +89,14 @@ const GlobalStyles = createGlobalStyle`
     background-color: rgba(255, 198, 0, 0.5);
     border-color: rgba(255, 198, 0, 0.7);
     ;
+  }
+  section {
+    padding-top: 4rem;
+  }
+  @media (min-width: 640px) {
+    section {
+      padding-top: 6rem;
+    }
   }
 `;
 

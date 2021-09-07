@@ -1,15 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import YoungSerif from '../assets/fonts/YoungSerif/YoungSerif-Regular.woff2'
-import OverpassLight from '../assets/fonts/Overpass/Overpass-Light.ttf'
-import TekoLight from '../assets/fonts/Teko/Teko-Light.ttf'
+import OverpassLight from '../assets/fonts/Overpass/Overpass-Light.ttf';
+import TekoLight from '../assets/fonts/Teko/Teko-Light.ttf';
 
 const Typography = createGlobalStyle`
-  @font-face {
-    font-family: 'YoungSerif';
-    src: url(${YoungSerif}) format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
   @font-face {
     font-family: 'Overpass';
     src: url(${OverpassLight});
@@ -22,6 +15,40 @@ const Typography = createGlobalStyle`
     font-weight: 300;
     font-style: normal;
   }
-`
 
-export default Typography
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3, .btn-text {
+    font-size: 3.5rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+  .btn {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    h1 {
+      font-size: 6rem;
+    }
+    h2 {
+      font-size: 5rem;
+    }
+    h3, .btn-text {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+    .btn {
+      font-size: 3rem;
+    }
+  }
+`;
+
+export default Typography;

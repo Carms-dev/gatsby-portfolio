@@ -10,10 +10,23 @@ const HeaderStyles = styled.header`
   top: 0;
   left: 0;
   padding: 1rem;
-
   a {
     display: flex;
     align-items: center;
+  }
+  .header-text {
+    display: none;
+  }
+  h4 {
+    font-size: 3.5rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+  @media (min-width: 640px) {
+    .header-text {
+      display: block;
+    }
   }
 `;
 
@@ -26,7 +39,7 @@ const Header = () => (
         imgStyle={{ objectFit: 'contain', width: '100%', height: '100%' }}
         style={{ width: '70px', height: '70px', marginRight: '1rem' }}
       />
-      <div>
+      <div className="header-text">
         <h4>Carms Ng</h4>
         <p>Full Stack Developer</p>
       </div>
