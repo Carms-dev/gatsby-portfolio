@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import background from "../assets/images/background.jpg"
+import styled from 'styled-components';
+import background from '../assets/images/background.jpg';
 
-export const HeroStyles = styled.section`
+const HeroStyles = styled.section`
   height: 100vh;
   background-image: url(${background});
   background-size: cover;
@@ -26,4 +26,43 @@ export const HeroStyles = styled.section`
     height: 100%;
     padding-bottom: 5vmin;
   }
-`
+`;
+
+const AboutStyles = styled.section`
+  .three-forth {
+    display: grid;
+    place-items: center;
+    grid-gap: 2rem;
+  }
+  .fifty-fifty {
+    display: grid;
+    grid-gap: 2rem;
+  }
+
+  .btns-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      margin: 3rem 1rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .three-forth {
+      grid-template-columns: 3fr 1fr;
+    }
+    .fifty-fifty {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 5rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .fifty-fifty {
+      grid-gap: 10rem;
+    }
+  }
+`;
+
+const PortfolioStyles = styled.section``;
+
+export { HeroStyles, AboutStyles, PortfolioStyles };
