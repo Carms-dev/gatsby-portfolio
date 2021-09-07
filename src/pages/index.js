@@ -38,62 +38,66 @@ export default function IndexPage({ data }) {
       </HeroStyles>
 
       {/* ABOUT */}
-      <AboutStyles id="about" className="container">
-        <h2>About</h2>
-        <div className="three-forth">
-          {/* eslint-disable-next-line max-len */}
-          <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
-          <a
-            className="btn"
-            href={data.file.publicURL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Resume
-          </a>
-        </div>
-
-        <div className="fifty-fifty">
-          <div>
-            <div className="btns-text">
-              <button
-                onClick={handleClick}
-                className={`btn-text ${favoritesOnly ? 'active' : ''}`}
-                type="button"
-                data-favorites="true"
-              >
-                Favorite Tools
-              </button>
-              <p>/</p>
-              <button
-                onClick={handleClick}
-                className={`btn-text ${favoritesOnly ? '' : 'active'}`}
-                type="button"
-                data-favorites="false"
-              >
-                Tool Box
-              </button>
-            </div>
-            <Icons icons={favoritesOnly ? favorites : allTools} />
+      <AboutStyles id="about">
+        <div className="container">
+          <h2>About</h2>
+          <div className="three-forth">
+            {/* eslint-disable-next-line max-len */}
+            <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
+            <a
+              className="btn"
+              href={data.file.publicURL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
           </div>
-          <div>
-            <h3>guiding values</h3>
-            <Icons icons={values} />
+
+          <div className="fifty-fifty">
+            <div>
+              <div className="btns-text">
+                <button
+                  onClick={handleClick}
+                  className={`btn-text ${favoritesOnly ? 'active' : ''}`}
+                  type="button"
+                  data-favorites="true"
+                >
+                  Favorite Tools
+                </button>
+                <p>/</p>
+                <button
+                  onClick={handleClick}
+                  className={`btn-text ${favoritesOnly ? '' : 'active'}`}
+                  type="button"
+                  data-favorites="false"
+                >
+                  Tool Box
+                </button>
+              </div>
+              <Icons icons={favoritesOnly ? favorites : allTools} />
+            </div>
+            <div>
+              <h3>guiding values</h3>
+              <Icons icons={values} />
+            </div>
           </div>
         </div>
       </AboutStyles>
 
       {/* Portfolio */}
-      <PortfolioStyles id="portfolio" className="container">
-        <div>
-          <h2>portfolio</h2>
-          <Projects projects={workProjects} allTools={allTools} />
-        </div>
-        <div>
-          <h2>hobby</h2>
-          <Projects projects={hobbies} allTools={allTools} />
-        </div>
+      <PortfolioStyles id="portfolio" style={{ background: 'var(--grey-light)' }}>
+        <div className="container">
 
+          <div>
+            <h2>portfolio</h2>
+            <Projects projects={workProjects} allTools={allTools} />
+          </div>
+          <div>
+            <h2>hobby</h2>
+            <Projects projects={hobbies} allTools={allTools} />
+          </div>
+        </div>
       </PortfolioStyles>
 
       {/* HOBBY */}

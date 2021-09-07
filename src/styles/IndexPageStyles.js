@@ -7,7 +7,6 @@ const HeroStyles = styled.section`
   background-size: cover;
   background-position: 70% 50%;
   h1 {
-    font-size: 4rem;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 55%, rgba(255, 198, 0, 0.7) 35%);
     padding: 1rem 1rem 0 1rem;
     line-height: 1;
@@ -26,34 +25,45 @@ const HeroStyles = styled.section`
     height: 100%;
     padding-bottom: 5vmin;
   }
+  @media (min-width: 640px) {
+    p {
+      font-size: 2.5rem;
+    }
+  }
 `;
 
 const AboutStyles = styled.section`
+  min-height: 100vh;
+  h2, h3, .btn-text {
+    margin-bottom: 3rem;
+  }
   .three-forth {
     display: grid;
     place-items: center;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
+    padding-bottom: 6rem;
   }
   .fifty-fifty {
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: 3rem;
+    padding-bottom: 6rem;
   }
 
   .btns-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    button {
-      margin: 3rem 1rem;
-    }
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
   }
   @media (min-width: 768px) {
     .three-forth {
       grid-template-columns: 3fr 1fr;
+      padding-top: 2rem;
+      padding-bottom: 8rem;
     }
     .fifty-fifty {
       grid-template-columns: 1fr 1fr;
       grid-gap: 5rem;
+      padding-bottom: 8rem;
     }
   }
   @media (min-width: 1280px) {
