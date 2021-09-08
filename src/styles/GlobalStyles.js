@@ -72,11 +72,11 @@ const GlobalStyles = createGlobalStyle`
     background: none;
     border: none;
     cursor: pointer;
-  }
-  .container {
-    max-width: 1280px;
-    padding: 20px;
-    margin: 0 auto;
+
+    &[disabled] {
+      cursor: not-allowed;
+      color: var(--black);
+    }
   }
   .btn {
     text-transform: uppercase;
@@ -102,6 +102,11 @@ const GlobalStyles = createGlobalStyle`
   }
   svg {
     transition: all 0.5s ease;
+  }
+  .container {
+    max-width: 1280px;
+    padding: 20px;
+    margin: 0 auto;
   }
   section {
     padding-top: 4rem;
