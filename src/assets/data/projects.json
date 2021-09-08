@@ -2,7 +2,7 @@
   {
     "title": "GEGI Law",
     "description": "Resource hub created to provide legal information on filing Human Rights Compliant as a last resort to advocate for gender expression and gender identity rights",
-    "roles": ["UI/UX", "Design", "Develop"],
+    "roles": ["UI/UX Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
     "image": "gegi-law.png",
     "demo": "gegi-law.gif",
@@ -23,8 +23,8 @@
   },
   {
     "title": "Coderbunker Canada",
-    "description": "Bilingual website for a Quebec City-based freelancer collective",
-    "roles": ["Design", "Develop"],
+    "description": "Bilingual website for a Quebec City-based freelancing group",
+    "roles": ["UI/UX Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
     "image": "coderbunker.png",
     "demo": "coderbunker.gif",
@@ -46,7 +46,7 @@
   {
     "title": "TechnoLibre",
     "description": "Develop UI elements & blocks to improve existing website builder + Company website revamp for Montreal-based startup",
-    "roles": ["Design", "Develop"],
+    "roles": ["UI/UX Design", "Develop"],
     "stack": ["Python", "XML", "JavaScript", "Sass"],
     "image": "technolibre.png",
     "demo": "technolibre.gif",
@@ -67,7 +67,7 @@
   {
     "title": "day-o",
     "description": "Climate Habit Builder prototype. Wanna Challenge yourself and/or a buddy? Track your impact today!",
-    "roles": ["UI/UX", "Design", "Develop"],
+    "roles": ["UI/UX Design", "Develop"],
     "stack": ["Ruby on Rails", "JavaScript", "Sass", "PostgreSQL", "Heroku"],
     "image": "dayo.png",
     "demo": "dayo.gif",
