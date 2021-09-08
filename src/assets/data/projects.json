@@ -4,8 +4,8 @@
     "description": "Resource hub created to provide legal information on filing Human Rights Compliant as a last resort to advocate for gender expression and gender identity rights",
     "roles": ["UI/UX Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
-    "image": "gegi-law.png",
-    "demo": "gegi-law.gif",
+    "image": "gegi-law2.png",
+    "demo": "gegi-law2.gif",
     "website": "https://law.gegi.ca/",
     "source": "https://github.com/Carms-dev/gegi-law-gatsby-netlify",
     "isHobby": false
