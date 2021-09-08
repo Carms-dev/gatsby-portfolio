@@ -25,6 +25,9 @@ const Typography = createGlobalStyle`
   h3, .btn-text {
     font-size: 3.5rem;
   }
+  h4 {
+    font-size: 2rem;
+  }
   p {
     font-size: 1.6rem;
   }
@@ -41,6 +44,9 @@ const Typography = createGlobalStyle`
     }
     h3, .btn-text {
       font-size: 4rem;
+    }
+    h4 {
+      font-size: 3rem;
     }
     p {
       font-size: 2rem;

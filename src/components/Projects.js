@@ -64,13 +64,12 @@ const ProjectsStyles = styled.div`
     display: grid;
     grid-auto-flow: column;
     grid-gap: 1rem;
-    /* place-content: center; */
   }
   .pill {
     font-size: 1.6rem;
     padding: 0.5rem;
     line-height: 1;
-    background-color: #F7DC79;
+    background-color: var(--yellow-light);
     border: 3px solid var(--yellow);
   }
   @media (min-width: 768px) {

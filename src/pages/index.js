@@ -43,7 +43,7 @@ export default function IndexPage({ data }) {
       </HeroStyles>
 
       {/* ABOUT */}
-      <AboutStyles id="about">
+      <AboutStyles id="about" style={{ background: 'var(--grey-light)' }}>
         <div className="container">
           <h2>About</h2>
           <div className="three-forth">
@@ -92,7 +92,7 @@ export default function IndexPage({ data }) {
       </AboutStyles>
 
       {/* Portfolio */}
-      <PortfolioStyles id="portfolio" style={{ background: 'var(--grey-light)' }}>
+      <PortfolioStyles id="portfolio">
         <div className="container">
 
           <div>
@@ -109,14 +109,13 @@ export default function IndexPage({ data }) {
       {/* HOBBY */}
 
       {/* CONTACT */}
-      <ContactStyles>
+      <ContactStyles style={{ background: 'var(--grey-light)' }}>
         <div className="container">
           <h2>contact</h2>
           <p>Want to collaberate? Let's grab a coffee over VC!</p>
 
           <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
             <input type="hidden" name="bot-field" />
-            {/* <input type="hidden" name="form-name" value="contact" /> */}
             <label htmlFor="name">
               Full Name
               <input type="text" name="name" id="name" required />
@@ -133,7 +132,6 @@ export default function IndexPage({ data }) {
               Send
               <Icon icon="la:telegram-plane" style={{ fontSize: '2rem' }} />
             </button>
-            {/* <input type="reset" value="Clear" /> */}
           </form>
 
         </div>

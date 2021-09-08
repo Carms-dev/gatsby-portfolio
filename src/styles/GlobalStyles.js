@@ -1,11 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-// import bg from '../assets/images/bg.svg';
-// import stripes from '../assets/images/stripes.svg';
 
 const GlobalStyles = createGlobalStyle`
   :root {
     --dark: #424C55;
     --yellow: #ffc600;
+    --yellow-light: #F7DC79;
     --blue-light: #80e7ff;
     --green: #5df2ae;
     --blue: #087E8B;
@@ -99,8 +98,10 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center;
     svg {
       margin-left: 0.5rem;
-      transition: all 0.5s ease;
     }
+  }
+  svg {
+    transition: all 0.5s ease;
   }
   section {
     padding-top: 4rem;
