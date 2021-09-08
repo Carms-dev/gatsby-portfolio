@@ -52,12 +52,14 @@ const IconStyles = styled.div`
 
 export default function IconItem({ tool, labelHidden }) {
   return (
-    <IconStyles color={tool.color} labelHidden={labelHidden}>
-      <div className="icon">
-        <Icon icon={tool.icon} />
-      </div>
-      <p>{tool.name}</p>
-    </IconStyles>
+    <a href={tool.url} target="_blank" rel="noreferrer">
+      <IconStyles color={tool.color} labelHidden={labelHidden}>
+        <div className="icon">
+          <Icon icon={tool.icon} />
+        </div>
+        <p>{tool.name}</p>
+      </IconStyles>
+    </a>
   );
 }
 

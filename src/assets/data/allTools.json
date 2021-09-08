@@ -1,125 +1,152 @@
 [
   {
     "icon": "mdi:language-ruby-on-rails",
+    "url": "https://rubyonrails.org/",
     "name": "Ruby on Rails",
     "color": "#CC0000",
     "favorite": true
   },
   {
     "icon": "logos:javascript",
+    "url": "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
     "name": "JavaScript",
     "favorite": true
   },
   {
     "icon": "logos:react",
+    "url": "https://reactjs.org/",
     "name": "React",
     "favorite": true
   },
   {
     "icon": "logos:python",
+    "url": "https://www.python.org/",
     "name": "Python"
   },
   {
     "icon": "logos:php",
+    "url": "https://www.php.net/",
     "name": "PHP"
   },
   {
     "icon": "logos:gatsby",
+    "url": "https://www.gatsbyjs.com/",
     "name": "Gatsby",
     "favorite": true
   },
   {
     "icon": "logos:graphql",
+    "url": "https://graphql.org/",
     "name": "GraphQL",
     "favorite": true
   },
   {
     "icon": "cib:next-js",
+    "url": "https://nextjs.org/",
     "name": "Next.js"
   },
   {
     "icon": "logos:netlify",
+    "url": "https://www.netlify.com/",
     "name": "Netlify",
     "favorite": true
   },
   {
     "icon": "logos:sanity",
+    "url": "https://www.sanity.io/",
     "name": "Sanity Studio",
     "favorite": true
   },
   {
     "icon": "simple-icons:styledcomponents",
+    "url": "https://styled-components.com/",
     "name": "styled components",
     "favorite": true
   },
   {
     "icon": "logos:figma",
+    "url": "https://www.figma.com/",
     "name": "Figma",
     "favorite": true
   },
   {
     "icon": "logos:tailwindcss-icon",
+    "url": "https://tailwindcss.com/",
     "name": "tailwindcss"
   },
   {
     "icon": "logos:sass",
+    "url": "https://sass-lang.com/",
     "name": "Sass",
     "favorite": true
   },
   {
     "icon": "logos:postgresql",
+    "url": "https://www.postgresql.org/",
     "name": "PostgreSQL"
   },
   {
     "icon": "logos:wordpress-icon",
+    "url": "https://en-ca.wordpress.org/",
     "name": "WordPress"
   },
   {
     "icon": "logos:mapbox-icon",
+    "url": "https://www.mapbox.com/",
     "name": "Mapbox"
   },
   {
     "icon": "logos:salesforce",
+    "url": "https://www.salesforce.com/",
     "name": "Salesforce"
   },
   {
     "icon": "logos:stripe",
+    "url": "https://stripe.com/",
     "name": "stripe"
   },
   {
     "icon": "logos:css-3",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS",
     "name": "CSS3"
   },
   {
     "icon": "logos:html-5",
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
     "name": "HTML5"
   },
   {
     "icon": "vscode-icons:file-type-xml",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/XML",
     "name": "XML"
   },
   {
     "icon": "logos:heroku-icon",
+    "url": "https://www.heroku.com/",
     "name": "Heroku"
   },
   {
     "icon": "logos:cloudinary",
+    "url": "https://cloudinary.com/",
     "name": "Cloudinary",
     "favorite": true
   },
   {
     "icon": "logos:apollostack",
+    "url": "https://www.apollographql.com/docs/react/",
     "name": "Apollo Client",
     "favorite": true
   },
   {
     "icon": "simple-icons:mongodb",
+    "url": "https://www.mongodb.com/",
     "name": "MongoDB",
     "color": "#13aa52",
     "favorite": true
   },
   {
     "icon": "logos:keystonejs",
+    "url": "https://keystonejs.com/",
     "name": "Keystone",
     "favorite": true
   }

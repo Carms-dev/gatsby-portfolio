@@ -83,12 +83,16 @@ const AboutStyles = styled.section`
 const PortfolioStyles = styled.section``;
 
 const ContactStyles = styled.section`
+  padding-bottom: 8rem;
   .container {
+    display: grid;
     max-width: 540px;
   }
 
+
   form {
-    padding: 5rem 0;
+    align-self: center;
+    padding: 10rem 0;
     display: grid;
     grid-gap: 1rem;
   }
@@ -101,6 +105,8 @@ const ContactStyles = styled.section`
     border: none;
     border-bottom: 3px solid var(--dark);
     line-height: 3rem;
+    color: var(--grey);
+    background: transparent;
   }
   form > * {
     width: 100%;
