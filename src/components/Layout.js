@@ -1,12 +1,12 @@
-import * as React from "react"
-import PropTypes from "prop-types"
+import * as React from 'react';
+import PropTypes from 'prop-types';
 
-import Header from "./Header"
-import GlobalStyles from "../styles/GlobalStyles"
-import Typography from "../styles/Typography"
-import Footer from "./Footer"
+import Header from './Header';
+import GlobalStyles from '../styles/GlobalStyles';
+import Typography from '../styles/Typography';
+import Footer from './Footer';
 
-const Layout = ({ children }) => {
+function Layout({ children, pausedRef }) {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -16,20 +16,19 @@ const Layout = ({ children }) => {
   //     }
   //   }
   // `)
-
   return (
     <>
       <GlobalStyles />
       <Typography />
       <Header />
       <main>{children}</main>
-      <Footer />
+      <Footer pausedRef={pausedRef} />
     </>
-  )
+  );
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
