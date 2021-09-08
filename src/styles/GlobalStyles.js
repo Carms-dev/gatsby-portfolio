@@ -34,18 +34,21 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     line-height: 1.6;
   }
-  h1, h2, h3, h4, h5, h6, a, button {
+  h1, h2, h3, h4, h5, h6, a, button, label {
     font-family: Teko, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.2;
     font-weight: 300;
   }
   h2, h3 {
     text-transform: lowercase;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
     line-height: 90%;
     padding: 0 10px;
     margin: 0 auto;
     width: max-content;
+  }
+  h2 {
+    margin-bottom: 3rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
   }
   h3 {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
@@ -79,7 +82,7 @@ const GlobalStyles = createGlobalStyle`
   .btn {
     text-transform: uppercase;
     font-size: 2rem;
-    padding: 6px 20px 3px 20px;
+    padding: 6px 20px;
     border: 3px solid var(--dark);
     transition: all 0.5s;
     background: rgba(255, 255, 255, 0.3);
@@ -89,6 +92,15 @@ const GlobalStyles = createGlobalStyle`
     background-color: rgba(255, 198, 0, 0.5);
     border-color: rgba(255, 198, 0, 0.7);
     ;
+  }
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      margin-left: 0.5rem;
+      transition: all 0.5s ease;
+    }
   }
   section {
     padding-top: 4rem;
