@@ -25,6 +25,9 @@ const HeroStyles = styled.section`
     height: 100%;
     padding-bottom: 5vmin;
   }
+  .btn-icon:hover svg {
+    transform: rotate(90deg);
+  }
   @media (min-width: 640px) {
     p {
       font-size: 2.5rem;
@@ -34,7 +37,11 @@ const HeroStyles = styled.section`
 
 const AboutStyles = styled.section`
   min-height: 100vh;
-  h2, h3, .btn-text {
+  .btn:hover svg {
+    transform: rotate(360deg);
+  }
+
+  h3, .btn-text {
     margin-bottom: 3rem;
   }
   .three-forth {
@@ -73,10 +80,36 @@ const AboutStyles = styled.section`
   }
 `;
 
-const PortfolioStyles = styled.section`
-  h2 {
-    margin-bottom: 3rem;
+const PortfolioStyles = styled.section``;
+
+const ContactStyles = styled.section`
+  .container {
+    max-width: 540px;
+  }
+
+  form {
+    padding: 5rem 0;
+    display: grid;
+    grid-gap: 1rem;
+  }
+  label {
+    font-size: 2.5rem;
+    display: grid;
+  }
+  input, textarea {
+    font-size: 2rem;
+    border: none;
+    border-bottom: 3px solid var(--dark);
+    line-height: 3rem;
+  }
+  form > * {
+    width: 100%;
+  }
+  .btn-icon:hover svg {
+    transform: rotate(360deg);
   }
 `;
 
-export { HeroStyles, AboutStyles, PortfolioStyles };
+export {
+  HeroStyles, AboutStyles, PortfolioStyles, ContactStyles,
+};

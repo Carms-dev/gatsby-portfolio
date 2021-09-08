@@ -57,17 +57,21 @@ const ProjectsStyles = styled.div`
     margin: 0 1rem;
   }
   .roles {
+    position: absolute;
+    bottom: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: grid;
     grid-auto-flow: column;
     grid-gap: 1rem;
-    place-content: center;
+    /* place-content: center; */
   }
   .pill {
     font-size: 1.6rem;
     padding: 0.5rem;
     line-height: 1;
-    background-color: rgba(255, 198, 0, 0.5);
-    border: 3px solid rgba(255, 198, 0, 0.7);
+    background-color: #F7DC79;
+    border: 3px solid var(--yellow);
   }
   @media (min-width: 768px) {
     .project {
@@ -105,7 +109,6 @@ export default function Projects({ projects, allTools }) {
     `,
   );
 
-  console.log(projectGifs);
   return (
     <ProjectsStyles>
       {projects.map((project) => {
@@ -124,12 +127,12 @@ export default function Projects({ projects, allTools }) {
                 className="project-img"
               />
               {demo && <img className="project-gif" src={demo.publicURL} alt={`${project.title} demo gif`} />}
-            </div>
-            <div className="project-info">
-              <h3>{project.title}</h3>
               <div className="roles">
                 {project.roles.map((role) => <small key={`${project.title} - ${role}`} className="pill">{role}</small>)}
               </div>
+            </div>
+            <div className="project-info">
+              <h3>{project.title}</h3>
               <p>{project.description}</p>
               <Icons icons={icons} labelHidden />
               <div className="btns-inline">

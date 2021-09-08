@@ -1,12 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
+import { Icon } from '@iconify/react';
 import Icons from '../components/Icons';
 
 import Layout from '../components/Layout';
 import Seo from '../components/seo';
-import { HeroStyles, AboutStyles, PortfolioStyles } from '../styles/IndexPageStyles';
+import {
+  HeroStyles, AboutStyles, PortfolioStyles, ContactStyles,
+} from '../styles/IndexPageStyles';
 import Projects from '../components/Projects';
 
 // Data
@@ -33,7 +35,10 @@ export default function IndexPage({ data }) {
         <div className="container" id="home">
           <h1>Hi folks! Carms here!</h1>
           <p>I'm a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
-          <a className="btn" href="#about">What I do</a>
+          <a className="btn btn-icon" href="#about">
+            What I do
+            <Icon icon="bytesize:arrow-right" style={{ fontSize: '2rem' }} />
+          </a>
         </div>
       </HeroStyles>
 
@@ -45,12 +50,13 @@ export default function IndexPage({ data }) {
             {/* eslint-disable-next-line max-len */}
             <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
             <a
-              className="btn"
+              className="btn btn-icon"
               href={data.file.publicURL}
               target="_blank"
               rel="noreferrer"
             >
               Resume
+              <Icon icon="clarity:download-line" style={{ fontSize: '2rem' }} />
             </a>
           </div>
 
@@ -103,9 +109,35 @@ export default function IndexPage({ data }) {
       {/* HOBBY */}
 
       {/* CONTACT */}
-      <div>
-        <h2>contact</h2>
-      </div>
+      <ContactStyles>
+        <div className="container">
+          <h2>contact</h2>
+          <p>Want to collaberate? Let's grab a coffee over VC!</p>
+
+          <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
+            <input type="hidden" name="bot-field" />
+            {/* <input type="hidden" name="form-name" value="contact" /> */}
+            <label htmlFor="name">
+              Full Name
+              <input type="text" name="name" id="name" required />
+            </label>
+            <label htmlFor="email">
+              Email
+              <input type="text" name="email" id="email" required />
+            </label>
+            <label htmlFor="message">
+              Message
+              <textarea name="message" id="message" cols="30" rows="4" required />
+            </label>
+            <button className="btn btn-icon" type="submit">
+              Send
+              <Icon icon="la:telegram-plane" style={{ fontSize: '2rem' }} />
+            </button>
+            {/* <input type="reset" value="Clear" /> */}
+          </form>
+
+        </div>
+      </ContactStyles>
     </Layout>
   );
 }
