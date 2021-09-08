@@ -80,7 +80,7 @@ const AboutStyles = styled.section`
   }
 `;
 
-const PortfolioStyles = styled.section``;
+const ProjectStyles = styled.section``;
 
 const ContactStyles = styled.section`
   padding-bottom: 8rem;
@@ -117,5 +117,5 @@ const ContactStyles = styled.section`
 `;
 
 export {
-  HeroStyles, AboutStyles, PortfolioStyles, ContactStyles,
+  HeroStyles, AboutStyles, ProjectStyles, ContactStyles,
 };

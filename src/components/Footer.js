@@ -2,9 +2,13 @@ import { Icon } from '@iconify/react';
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Footer() {
+export default function Footer({ pausedRef }) {
   const scrollToTop = () => {
+    pausedRef.current = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      pausedRef.current = false;
+    }, 1000);
   };
   return (
     <FooterStyles>
