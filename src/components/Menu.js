@@ -51,18 +51,21 @@ function Menu({ isMenuOpen, pausedRef, sectionRefs }) {
     window.scrollTo({ top, behavior: 'smooth' });
 
     // Un-pause observer effect
-    setTimeout(() => {
-      pausedRef.current = false;
-    }, 1500);
+    const checkIfScrollCompleted = setInterval(() => {
+      if (window.scrollY === top) {
+        pausedRef.current = false;
+        clearInterval(checkIfScrollCompleted);
+      }
+    }, 25);
   };
 
   return (
     <MenuStyles isMenuOpen={isMenuOpen}>
       {menuItems.map(({ label, ref, type }) => {
-        if (type === 'anchor') return <a key={ref} href={ref}>{label}</a>;
+        if (type === 'anchor') return <a key={`menu-${ref}`} href={ref}>{label}</a>;
 
         return (
-          <button type="button" onClick={handleClick} data-index={ref}>{label}</button>
+          <button type="button" key={`menu-${ref}`} onClick={handleClick} data-index={ref}>{label}</button>
         );
       })}
 
