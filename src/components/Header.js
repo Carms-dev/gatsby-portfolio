@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -11,8 +11,25 @@ function Header({
 }) {
   const toggleMenu = () => { setMenuOpen(!isMenuOpen); };
 
+  const headerRef = useRef();
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY >= window.innerHeight) {
+      headerRef.current.classList.add('bg-whiteish');
+    } else {
+      headerRef.current.classList.remove('bg-whiteish');
+    }
+  };
+
   return (
-    <HeaderStyles>
+    <HeaderStyles ref={headerRef}>
       <Link
         to="/"
         className="btn-logo"
@@ -47,7 +64,7 @@ Header.defaultProps = {
 
 const HeaderStyles = styled.header`
   z-index: 10;
-  height: 80px;
+  /* height: 80px; */
   position: fixed;
   top: 0;
   left: 0;
@@ -70,7 +87,6 @@ const HeaderStyles = styled.header`
   .btn-menu {
     padding: 1rem;
     justify-self: flex-end;
-    align-self: flex-start;
     z-index: 12;
   }
   .btn-menu svg {

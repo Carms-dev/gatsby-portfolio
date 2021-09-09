@@ -53,7 +53,7 @@ function Menu({ isMenuOpen, pausedRef, sectionRefs }) {
     // Un-pause observer effect
     setTimeout(() => {
       pausedRef.current = false;
-    }, 2000);
+    }, 1500);
   };
 
   return (
