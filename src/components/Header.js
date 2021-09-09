@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 import Menu from './Menu';
-import DarkScreen from './DarkScreen';
+import DarkOverlay from './DarkOverlay';
 
 function Header({
   isMenuOpen, setMenuOpen, pausedRef, sectionRefs,
@@ -50,8 +50,13 @@ function Header({
       <button className="btn-menu" type="button" onClick={toggleMenu}>
         <Icon icon={`${isMenuOpen ? 'akar-icons:cross' : 'mdi:hamburger'}`} />
       </button>
-      <Menu isMenuOpen={isMenuOpen} pausedRef={pausedRef} sectionRefs={sectionRefs} />
-      {isMenuOpen && <DarkScreen isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
+      <Menu
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+        pausedRef={pausedRef}
+        sectionRefs={sectionRefs}
+      />
+      {isMenuOpen && <DarkOverlay isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
     </HeaderStyles>
   );
 }
