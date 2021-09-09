@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-function DarkScreen({ isMenuOpen, setMenuOpen }) {
+function DarkOverlay({ isMenuOpen, setMenuOpen }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', closeMenu);
@@ -15,11 +15,11 @@ function DarkScreen({ isMenuOpen, setMenuOpen }) {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <DarkScreenStyles onClick={closeMenu} />
+    <DarkOverlayStyles onClick={closeMenu} />
   );
 }
 
-const DarkScreenStyles = styled.div`
+const DarkOverlayStyles = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -29,4 +29,4 @@ const DarkScreenStyles = styled.div`
   background: rgba(0,0,0,0.7);
 `;
 
-export default DarkScreen;
+export default DarkOverlay;
