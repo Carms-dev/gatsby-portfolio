@@ -4,7 +4,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import SocialIcons from './SocialIcons';
 
-function Menu({ isMenuOpen, pausedRef, sectionRefs }) {
+function Menu({
+  isMenuOpen, setMenuOpen, pausedRef, sectionRefs,
+}) {
   const { resume } = useStaticQuery(graphql`
     query {
       resume: file(extension: {eq: "pdf"}) {
@@ -45,24 +47,38 @@ function Menu({ isMenuOpen, pausedRef, sectionRefs }) {
     // Pause observer effect
     pausedRef.current = true;
 
+    // Find the targeted scroll Position Y and scrollTo
     const refIndex = parseInt(ev.target.dataset.index, 10);
     const currentRef = sectionRefs.current[refIndex];
     const top = currentRef.offsetTop;
     window.scrollTo({ top, behavior: 'smooth' });
 
+    // Close Menu
+    setMenuOpen(false);
+
     // Un-pause observer effect
-    setTimeout(() => {
-      pausedRef.current = false;
-    }, 1500);
+    const checkIfScrollCompleted = setInterval(() => {
+      if (window.scrollY === top) {
+        pausedRef.current = false;
+        clearInterval(checkIfScrollCompleted);
+      }
+    }, 25);
   };
 
   return (
     <MenuStyles isMenuOpen={isMenuOpen}>
       {menuItems.map(({ label, ref, type }) => {
-        if (type === 'anchor') return <a key={ref} href={ref}>{label}</a>;
+        if (type === 'anchor') return <a key={`menu-${ref}`} href={ref}>{label}</a>;
 
         return (
-          <button type="button" onClick={handleClick} data-index={ref}>{label}</button>
+          <button
+            type="button"
+            key={`menu-${ref}`}
+            onClick={handleClick}
+            data-index={ref}
+          >
+            {label}
+          </button>
         );
       })}
 

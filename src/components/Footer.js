@@ -7,9 +7,12 @@ export default function Footer({ pausedRef }) {
   const scrollToTop = () => {
     pausedRef.current = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => {
-      pausedRef.current = false;
-    }, 1500);
+    const checkIfScrollCompleted = setInterval(() => {
+      if (window.scrollY === 0) {
+        pausedRef.current = false;
+        clearInterval(checkIfScrollCompleted);
+      }
+    }, 25);
   };
   return (
     <FooterStyles>
