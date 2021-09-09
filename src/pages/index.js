@@ -64,7 +64,7 @@ export default function IndexPage({ data }) {
 
     // Clean up Observer by unobserving each ref
     return () => {
-      refs.current.forEach((ref) => {
+      refs.current?.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
@@ -76,7 +76,7 @@ export default function IndexPage({ data }) {
     window.scrollTo({ top, behavior: 'smooth' });
   };
   return (
-    <Layout pausedRef={pausedRef}>
+    <Layout pausedRef={pausedRef} sectionRefs={sectionRefs}>
       <Seo title="Carms Ng | Full Stack Developer" />
 
       {/* Hero */}
@@ -162,7 +162,7 @@ export default function IndexPage({ data }) {
       </ProjectStyles>
 
       {/* Contact */}
-      <ContactStyles ref={addToRefs} style={{ background: 'var(--grey-light)' }} data-index="3">
+      <ContactStyles ref={addToRefs} id="contact" style={{ background: 'var(--grey-light)' }} data-index="3">
         <div className="container">
           <h2>contact</h2>
           <p>Want to collaberate? Let's grab a coffee over VC!</p>
