@@ -5,22 +5,24 @@ import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 import Menu from './Menu';
+import DarkScreen from './DarkScreen';
 
 function Header({
   isMenuOpen, setMenuOpen, pausedRef, sectionRefs,
 }) {
-  const toggleMenu = () => { setMenuOpen(!isMenuOpen); };
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
   const headerRef = useRef();
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', updateHeader);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', updateHeader);
     };
   }, []);
 
-  const handleScroll = () => {
+  const updateHeader = () => {
     if (window.scrollY >= window.innerHeight) {
       headerRef.current.classList.add('bg-whiteish');
     } else {
@@ -48,8 +50,8 @@ function Header({
       <button className="btn-menu" type="button" onClick={toggleMenu}>
         <Icon icon={`${isMenuOpen ? 'akar-icons:cross' : 'mdi:hamburger'}`} />
       </button>
-      {/* <div className="nav" /> */}
       <Menu isMenuOpen={isMenuOpen} pausedRef={pausedRef} sectionRefs={sectionRefs} />
+      {isMenuOpen && <DarkScreen isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
     </HeaderStyles>
   );
 }

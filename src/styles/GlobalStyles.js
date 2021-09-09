@@ -25,7 +25,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
   *:focus {
-    outline: 0 !important;
+    outline: none;
+    box-shadow: none;
   }
   body {
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
