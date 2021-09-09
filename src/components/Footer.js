@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react';
 import React from 'react';
 import styled from 'styled-components';
+import SocialIcons from './SocialIcons';
 
 export default function Footer({ pausedRef }) {
   const scrollToTop = () => {
@@ -8,7 +9,7 @@ export default function Footer({ pausedRef }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {
       pausedRef.current = false;
-    }, 1000);
+    }, 2000);
   };
   return (
     <FooterStyles>
@@ -18,17 +19,7 @@ export default function Footer({ pausedRef }) {
         {new Date().getFullYear()}
       </h4>
       {/* Social */}
-      <div>
-        <a className="btn-social" href="https://github.com/carms-dev" target="_blank" rel="noreferrer">
-          <Icon icon="feather:github" />
-        </a>
-        <a className="btn-social" href="https://www.linkedin.com/in/carmsng/" target="_blank" rel="noreferrer">
-          <Icon icon="feather:linkedin" />
-        </a>
-        <a className="btn-social" href="mailto: contact@carms-ng.com" target="_blank" rel="noreferrer">
-          <Icon icon="feather:mail" />
-        </a>
-      </div>
+      <SocialIcons />
       <button onClick={scrollToTop} type="button" className="btn">
         <Icon icon="bi:arrow-up" />
       </button>
@@ -45,28 +36,7 @@ const FooterStyles = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  div {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 1.5rem;
-  }
-  .btn-social {
-    width: 3rem;
-    height: 3rem;
-    display: grid;
-    place-content: center;
-    background: var(--yellow);
-    padding: 1rem;
-    border-radius: 50%;
-    transition: all 1s ease;
-    svg {
-      font-size: 1.6rem;
-      color: var(--dark);
-    }
-  }
-  .btn-social:hover {
-    border-radius: 0;
-  }
+
   button {
     position: absolute;
     top: -7rem;
@@ -76,15 +46,5 @@ const FooterStyles = styled.footer`
   }
   button:hover svg {
     transform: rotate(360deg);
-  }
-
-  @media (min-width: 640px) {
-    .btn-social {
-      width: 4rem;
-      height: 4rem;
-      svg {
-        font-size: 2rem;
-      }
-    }
   }
 `;
