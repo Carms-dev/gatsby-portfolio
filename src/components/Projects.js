@@ -88,7 +88,7 @@ export default function Projects({ projects, allTools }) {
   const { projectImages, projectGifs } = useStaticQuery(
     graphql`
       {
-        projectImages: allFile(filter: {relativeDirectory: {eq: "projects"}}) {
+        projectImages: allFile(filter: {relativeDirectory: {eq: "projects"},  extension: { ne: "gif" }}) {
           nodes {
             base
             childImageSharp {
@@ -101,7 +101,7 @@ export default function Projects({ projects, allTools }) {
             }
           }
         }
-        projectGifs: allFile(filter: { extension: { eq: "gif" } }) {
+        projectGifs: allFile(filter: { relativeDirectory: {eq: "projects"}, extension: { eq: "gif" } }) {
           nodes {
             publicURL
             base
