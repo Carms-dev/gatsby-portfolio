@@ -11,7 +11,8 @@ const ProjectsStyles = styled.div`
 
   .project {
     display: grid;
-    align-items: flex-start;
+    align-items: center;
+    grid-gap: 4rem;
     h3 {
       margin-top: 0;
       margin-bottom: 0;
@@ -47,7 +48,7 @@ const ProjectsStyles = styled.div`
   .project-info {
     padding: 2rem 0;
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: 3.5rem;
   }
   .btns-inline {
     display: flex;
@@ -71,8 +72,10 @@ const ProjectsStyles = styled.div`
     line-height: 1;
     background-color: var(--yellow-light);
     border: 3px solid var(--yellow);
+    white-space: nowrap;
   }
-  @media (min-width: 768px) {
+
+  @media (min-width: 1024px) {
     .project {
       margin: 5rem 0;
       grid-template-columns: 1fr 1fr;
