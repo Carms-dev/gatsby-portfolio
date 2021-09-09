@@ -9,7 +9,7 @@ export default function Footer({ pausedRef }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {
       pausedRef.current = false;
-    }, 2000);
+    }, 1500);
   };
   return (
     <FooterStyles>

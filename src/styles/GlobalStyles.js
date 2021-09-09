@@ -32,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     line-height: 1.6;
+    scroll-behavior: smooth;
   }
   h1, h2, h3, h4, h5, h6, a, button, label {
     font-family: Teko, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -110,11 +111,14 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
   section {
-    padding-top: 4rem;
+    padding-top: 8rem;
+  }
+  .bg-whiteish {
+    background: rgba(230, 230, 230, 0.9);
   }
   @media (min-width: 640px) {
     section {
-      padding-top: 6rem;
+      padding-top: 10rem;
     }
   }
 `;

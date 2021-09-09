@@ -95,15 +95,16 @@ const ProjectStyles = styled.section`
 
 const ContactStyles = styled.section`
   min-height: calc(100vh - 120px);
-  padding-bottom: 8rem;
+  padding-bottom: 7rem;
   .container {
     display: grid;
     max-width: 540px;
+    grid-template-rows: 1fr 1fr auto;
   }
 
   form {
     align-self: center;
-    padding: 10rem 0;
+    padding: 2rem 0;
     display: grid;
     grid-gap: 1rem;
   }
