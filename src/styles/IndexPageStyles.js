@@ -80,7 +80,18 @@ const AboutStyles = styled.section`
   }
 `;
 
-const ProjectStyles = styled.section``;
+const ProjectStyles = styled.section`
+  .container {
+    max-width: 640px;
+  }
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      max-width: 1280px;
+
+    }
+  }
+`;
 
 const ContactStyles = styled.section`
   padding-bottom: 8rem;
