@@ -72,6 +72,7 @@ const GlobalStyles = createGlobalStyle`
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--black);
 
     &[disabled] {
       cursor: not-allowed;

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
@@ -6,7 +6,8 @@ import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
 import Footer from './Footer';
 
-function Layout({ children, pausedRef }) {
+function Layout({ children, pausedRef, sectionRefs }) {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -20,7 +21,12 @@ function Layout({ children, pausedRef }) {
     <>
       <GlobalStyles />
       <Typography />
-      <Header />
+      <Header
+        isMenuOpen={isMenuOpen}
+        setMenuOpen={setMenuOpen}
+        pausedRef={pausedRef}
+        sectionRefs={sectionRefs}
+      />
       <main>{children}</main>
       <Footer pausedRef={pausedRef} />
     </>

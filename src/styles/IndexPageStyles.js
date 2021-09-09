@@ -94,12 +94,12 @@ const ProjectStyles = styled.section`
 `;
 
 const ContactStyles = styled.section`
+  min-height: calc(100vh - 120px);
   padding-bottom: 8rem;
   .container {
     display: grid;
     max-width: 540px;
   }
-
 
   form {
     align-self: center;
