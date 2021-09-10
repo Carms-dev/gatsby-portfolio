@@ -83,7 +83,9 @@ export default function IndexPage({ data }) {
       {/* Hero */}
       <HeroStyles ref={addToRefs} id="home" data-index="0">
         <div className="container">
-          <h1>Hi folks! Carms here!</h1>
+          <h1>
+            <span>Hi folks! Carms here!</span>
+          </h1>
           <p>I&apos;m a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
           <button type="button" className="btn btn-icon" onClick={scrollToAbout} aria-label="Go to About">
             What I do
