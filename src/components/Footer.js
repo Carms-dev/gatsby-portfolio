@@ -22,9 +22,12 @@ export default function Footer({ pausedRef }) {
       </p>
       {/* Social */}
       <SocialIcons />
-      <button className="btn btn-top" onClick={scrollToTop} type="button" aria-label="Go To Page Top">
-        <Icon icon="bi:arrow-up" />
-      </button>
+      {pausedRef
+        && (
+        <button className="btn btn-top" onClick={scrollToTop} type="button" aria-label="Go To Page Top">
+          <Icon icon="bi:arrow-up" />
+        </button>
+        )}
     </FooterStyles>
   );
 }

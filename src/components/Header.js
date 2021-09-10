@@ -29,15 +29,21 @@ function Header({
           <p>Full Stack Developer</p>
         </div>
       </Link>
-      <button className="btn-menu" type="button" onClick={toggleMenu} aria-label="Open or Close Menu">
-        <Icon icon={`${isMenuOpen ? 'uiw:menu-unfold' : 'uiw:menu-fold'}`} />
-      </button>
-      <Menu
-        isMenuOpen={isMenuOpen}
-        setMenuOpen={setMenuOpen}
-        pausedRef={pausedRef}
-        sectionRefs={sectionRefs}
-      />
+      {
+        pausedRef && (
+          <>
+            <button className="btn-menu" type="button" onClick={toggleMenu} aria-label="Open or Close Menu">
+              <Icon icon={`${isMenuOpen ? 'uiw:menu-unfold' : 'uiw:menu-fold'}`} />
+            </button>
+            <Menu
+              isMenuOpen={isMenuOpen}
+              setMenuOpen={setMenuOpen}
+              pausedRef={pausedRef}
+              sectionRefs={sectionRefs}
+            />
+          </>
+        )
+      }
       {isMenuOpen && <DarkOverlay isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
     </HeaderStyles>
   );
