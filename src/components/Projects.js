@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -24,7 +25,7 @@ const ProjectsStyles = styled.div`
     .project-img {
       transition: all 1s ease;
     }
-    .project-gif {
+    .project-mp4 {
       position: absolute;
       width: 100%;
       top: 50%;
@@ -37,7 +38,7 @@ const ProjectsStyles = styled.div`
       object-fit: contain;
     }
   }
-  .project-media:hover .project-gif {
+  .project-media:hover .project-mp4 {
     visibility: visible;
     opacity: 1;
   }
@@ -85,10 +86,10 @@ const ProjectsStyles = styled.div`
 `;
 
 export default function Projects({ projects, allTools }) {
-  const { projectImages, projectGifs } = useStaticQuery(
+  const { images, videos } = useStaticQuery(
     graphql`
       {
-        projectImages: allFile(filter: {relativeDirectory: {eq: "projects"},  extension: { ne: "gif" }}) {
+        images: allFile(filter: {relativeDirectory: {eq: "projects"},  extension: { ne: "mp4" }}) {
           nodes {
             base
             childImageSharp {
@@ -101,7 +102,7 @@ export default function Projects({ projects, allTools }) {
             }
           }
         }
-        projectGifs: allFile(filter: { relativeDirectory: {eq: "projects"}, extension: { eq: "gif" } }) {
+        videos: allFile(filter: { relativeDirectory: {eq: "projects"}, extension: { eq: "mp4" } }) {
           nodes {
             publicURL
             base
@@ -114,10 +115,9 @@ export default function Projects({ projects, allTools }) {
   return (
     <ProjectsStyles>
       {projects.map((project) => {
-        const image = projectImages.nodes.find((node) => node.base === project.image);
+        const image = images.nodes.find((node) => node.base === project.image);
         const icons = allTools.filter((tool) => project.stack.includes(tool.name));
-        const demo = projectGifs.nodes.find((node) => node.base === project.demo);
-
+        const demo = videos.nodes.find((node) => node.base === project.demo);
         return (
           <div key={project.title} className="project">
             <div className="project-media">
@@ -128,7 +128,13 @@ export default function Projects({ projects, allTools }) {
                 style={{ maxHeight: '50vh' }}
                 className="project-img"
               />
-              {demo && <img className="project-gif" src={demo.publicURL} alt={`${project.title} demo gif`} />}
+              {demo
+              && (
+              // eslint-disable-next-line jsx-a11y/media-has-caption
+                <video className="project-mp4" width="100%" autoPlay muted loop>
+                  <source src={demo.publicURL} type="video/mp4" />
+                </video>
+              )}
               <div className="roles">
                 {project.roles.map((role) => <small key={`${project.title} - ${role}`} className="pill">{role}</small>)}
               </div>
@@ -148,3 +154,8 @@ export default function Projects({ projects, allTools }) {
     </ProjectsStyles>
   );
 }
+
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allTools: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

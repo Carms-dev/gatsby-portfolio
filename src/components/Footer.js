@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import SocialIcons from './SocialIcons';
@@ -29,6 +30,12 @@ export default function Footer({ pausedRef }) {
     </FooterStyles>
   );
 }
+
+Footer.propTypes = {
+  pausedRef: PropTypes.shape({
+    current: PropTypes.bool,
+  }).isRequired,
+};
 
 const FooterStyles = styled.footer`
   position: relative;
