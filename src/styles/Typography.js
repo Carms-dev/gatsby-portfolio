@@ -4,16 +4,18 @@ import TekoLight from '../assets/fonts/Teko/Teko-Light.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
-    font-family: 'Overpass';
-    src: url(${OverpassLight});
-    font-weight: light;
-    font-style: normal;
-  }
-  @font-face {
     font-family: 'Teko';
     src: url(${TekoLight});
     font-weight: 300;
     font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Overpass';
+    src: url(${OverpassLight});
+    font-weight: light;
+    font-style: normal;
+    font-display: block;
   }
 
   h1 {
