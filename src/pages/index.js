@@ -196,16 +196,12 @@ export default function IndexPage({ data }) {
   );
 }
 
-IndexPage.defaultProps = {
-  data: {},
-};
-
 IndexPage.propTypes = {
   data: PropTypes.shape({
     resume: PropTypes.shape({
       publicURL: PropTypes.string,
     }),
-  }),
+  }).isRequired,
 };
 
 export const data = graphql`

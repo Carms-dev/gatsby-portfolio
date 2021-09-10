@@ -1,10 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 import SocialIcons from './SocialIcons';
 
-function Menu({
+export default function Menu({
   isMenuOpen, setMenuOpen, pausedRef, sectionRefs,
 }) {
   const { resume } = useStaticQuery(graphql`
@@ -87,6 +87,17 @@ function Menu({
   );
 }
 
+Menu.propTypes = {
+  isMenuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
+  pausedRef: PropTypes.shape({
+    current: PropTypes.bool,
+  }).isRequired,
+  sectionRefs: PropTypes.shape({
+    current: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
+};
+
 const MenuStyles = styled.div`
   z-index: 11;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
@@ -126,5 +137,3 @@ const MenuStyles = styled.div`
     }
   }
 `;
-
-export default Menu;

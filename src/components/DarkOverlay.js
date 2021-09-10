@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-function DarkOverlay({ isMenuOpen, setMenuOpen }) {
+export default function DarkOverlay({ isMenuOpen, setMenuOpen }) {
+  const closeMenu = () => setMenuOpen(false);
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', closeMenu);
@@ -12,12 +15,15 @@ function DarkOverlay({ isMenuOpen, setMenuOpen }) {
     };
   }, [isMenuOpen]);
 
-  const closeMenu = () => setMenuOpen(false);
-
   return (
     <DarkOverlayStyles onClick={closeMenu} />
   );
 }
+
+DarkOverlay.propTypes = {
+  isMenuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
+};
 
 const DarkOverlayStyles = styled.div`
   position: fixed;
@@ -28,5 +34,3 @@ const DarkOverlayStyles = styled.div`
   z-index: 9;
   background: rgba(0,0,0,0.7);
 `;
-
-export default DarkOverlay;

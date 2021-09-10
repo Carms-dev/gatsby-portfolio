@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -153,3 +154,8 @@ export default function Projects({ projects, allTools }) {
     </ProjectsStyles>
   );
 }
+
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allTools: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

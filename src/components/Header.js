@@ -12,7 +12,15 @@ function Header({
 }) {
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
+  // Update Header Style based on scrollY position
   const headerRef = useRef();
+  const updateHeader = () => {
+    if (window.scrollY >= window.innerHeight) {
+      headerRef.current.classList.add('bg-whiteish');
+    } else {
+      headerRef.current.classList.remove('bg-whiteish');
+    }
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', updateHeader);
@@ -21,14 +29,6 @@ function Header({
       window.removeEventListener('scroll', updateHeader);
     };
   }, []);
-
-  const updateHeader = () => {
-    if (window.scrollY >= window.innerHeight) {
-      headerRef.current.classList.add('bg-whiteish');
-    } else {
-      headerRef.current.classList.remove('bg-whiteish');
-    }
-  };
 
   return (
     <HeaderStyles ref={headerRef}>
@@ -62,16 +62,18 @@ function Header({
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: '',
+  isMenuOpen: PropTypes.bool.isRequired,
+  setMenuOpen: PropTypes.func.isRequired,
+  pausedRef: PropTypes.shape({
+    current: PropTypes.bool,
+  }).isRequired,
+  sectionRefs: PropTypes.shape({
+    current: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
 };
 
 const HeaderStyles = styled.header`
   z-index: 10;
-  /* height: 80px; */
   position: fixed;
   top: 0;
   left: 0;

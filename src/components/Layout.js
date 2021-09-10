@@ -8,15 +8,6 @@ import Footer from './Footer';
 
 function Layout({ children, pausedRef, sectionRefs }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
   return (
     <>
       <GlobalStyles />
@@ -35,6 +26,12 @@ function Layout({ children, pausedRef, sectionRefs }) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  pausedRef: PropTypes.shape({
+    current: PropTypes.bool,
+  }).isRequired,
+  sectionRefs: PropTypes.shape({
+    current: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
 };
 
 export default Layout;
