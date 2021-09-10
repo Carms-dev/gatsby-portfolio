@@ -5,7 +5,7 @@
     "roles": ["UI/UX Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
     "image": "gegi-law.png",
-    "demo": "gegi-law.gif",
+    "demo": "gegi-law.mp4",
     "website": "https://law.gegi.ca/",
     "source": "https://github.com/Carms-dev/gegi-law-gatsby-netlify",
     "isHobby": false
@@ -16,7 +16,7 @@
     "roles": ["Partial Revamp", "Develop"],
     "stack": ["WordPress", "PHP", "JavaScript", "CSS3"],
     "image": "gegi.png",
-    "demo": "gegi.gif",
+    "demo": "gegi.mp4",
     "website": "https://www.gegi.ca/",
     "source": "https://github.com/Carms-dev/gegi-avada-child-theme",
     "isHobby": false
@@ -27,7 +27,7 @@
     "roles": ["UI/UX Design", "Develop"],
     "stack": ["React", "Gatsby", "Netlify", "styled components"],
     "image": "coderbunker.png",
-    "demo": "coderbunker.gif",
+    "demo": "coderbunker.mp4",
     "website": "https://coderbunker.ca/",
     "source": "https://github.com/coderbunker/coderbunker.ca",
     "isHobby": false
@@ -38,7 +38,7 @@
     "roles": ["Develop"],
     "stack": ["Gatsby", "styled components", "tailwindcss"],
     "image": "weed.png",
-    "demo": "weed.gif",
+    "demo": "weed.mp4",
     "website": "http://ellengallery.concordia.ca/what-is-a-weed/",
     "source": "https://github.com/Carms-dev/gatsby-weed",
     "isHobby": false
@@ -49,7 +49,7 @@
     "roles": ["UI/UX Design", "Develop"],
     "stack": ["Python", "XML", "JavaScript", "Sass"],
     "image": "technolibre.png",
-    "demo": "technolibre.gif",
+    "demo": "technolibre.mp4",
     "website": "http://ellengallery.concordia.ca/what-is-a-weed/",
     "source": "https://github.com/ERPLibre/erplibre_theme_addons/tree/12.0",
     "isHobby": false
@@ -60,7 +60,7 @@
     "roles": ["Project Manage", "Develop"],
     "stack": ["Sass", "HTML5"],
     "image": "missing-justice.png",
-    "demo": "missing-justice.gif",
+    "demo": "missing-justice.mp4",
     "website": "https://missingjustice.ca/",
     "isHobby": false
   },
@@ -70,7 +70,7 @@
     "roles": ["UI/UX Design", "Develop"],
     "stack": ["Ruby on Rails", "JavaScript", "Sass", "PostgreSQL", "Heroku"],
     "image": "dayo.png",
-    "demo": "dayo.gif",
+    "demo": "dayo.mp4",
     "website": "https://day-o.herokuapp.com/",
     "source": "https://github.com/carms-dev/day-o",
     "isHobby": true
@@ -81,7 +81,7 @@
     "roles": ["Develop"],
     "stack": ["Ruby on Rails", "JavaScript", "Sass", "PostgreSQL", "Mapbox", "Heroku"],
     "image": "newcomerwerk.png",
-    "demo" : "newcomerwerk.gif",
+    "demo" : "newcomerwerk.mp4",
     "website": "http://ellengallery.concordia.ca/what-is-a-weed/",
     "source": "https://github.com/Carms-dev/NewcomerWerk",
     "isHobby": true
