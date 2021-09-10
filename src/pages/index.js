@@ -96,7 +96,7 @@ export default function IndexPage({ data }) {
       <AboutStyles
         ref={addToRefs}
         id="about"
-        style={{ background: 'var(--grey-light)' }}
+        style={{ background: 'var(--off-white)' }}
         data-index="1"
       >
         <div className="container">
@@ -165,7 +165,7 @@ export default function IndexPage({ data }) {
       </ProjectStyles>
 
       {/* Contact */}
-      <ContactStyles ref={addToRefs} id="contact" style={{ background: 'var(--grey-light)' }} data-index="3">
+      <ContactStyles ref={addToRefs} id="contact" style={{ background: 'var(--off-white)' }} data-index="3">
         <div className="container">
           <h2>contact</h2>
           <p>Want to collaberate? Let's grab a coffee over VC!</p>
