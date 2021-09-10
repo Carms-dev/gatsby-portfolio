@@ -17,9 +17,9 @@ export default function Footer({ pausedRef }) {
   };
   return (
     <FooterStyles>
-      <h4>
+      <p>
         {`© Carms Ng ${new Date().getFullYear()}`}
-      </h4>
+      </p>
       {/* Social */}
       <SocialIcons />
       <button className="btn btn-top" onClick={scrollToTop} type="button" aria-label="Go To Page Top">
@@ -45,6 +45,10 @@ const FooterStyles = styled.footer`
   justify-content: space-between;
   align-items: center;
 
+  p {
+    font-family: Teko, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3rem;
+  }
   .btn-top {
     position: absolute;
     top: -7rem;
