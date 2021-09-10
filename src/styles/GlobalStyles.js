@@ -111,14 +111,14 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
   section {
-    padding-top: 8rem;
+    padding-top: 3rem;
   }
   .bg-whiteish {
     background: rgba(230, 230, 230, 0.9);
   }
   @media (min-width: 640px) {
     section {
-      padding-top: 10rem;
+      padding-top: 8rem;
     }
   }
 `;

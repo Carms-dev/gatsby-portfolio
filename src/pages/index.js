@@ -84,7 +84,7 @@ export default function IndexPage({ data }) {
       <HeroStyles ref={addToRefs} id="home" data-index="0">
         <div className="container">
           <h1>Hi folks! Carms here!</h1>
-          <p>I'm a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
+          <p>I&apos;m a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
           <button type="button" className="btn btn-icon" onClick={scrollToAbout} aria-label="Go to About">
             What I do
             <Icon icon="bytesize:arrow-right" style={{ fontSize: '2rem' }} />
@@ -103,7 +103,7 @@ export default function IndexPage({ data }) {
           <h2>About</h2>
           <div className="three-forth">
             {/* eslint-disable-next-line max-len */}
-            <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
+            <p>I&apos;m passionate about building impactful applications to improve lives around me. I&apos;m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
             <a
               className="btn btn-icon"
               href={data.resume.publicURL}
@@ -168,7 +168,7 @@ export default function IndexPage({ data }) {
       <ContactStyles ref={addToRefs} id="contact" style={{ background: 'var(--off-white)' }} data-index="3">
         <div className="container">
           <h2>contact</h2>
-          <p>Want to collaberate? Let's grab a coffee over VC!</p>
+          <p>Want to collaberate? Let&apos;s grab a coffee over VC!</p>
 
           {/* Contact form wired to netlify forms */}
           {/* TODO: Improve Redirect Page */}
