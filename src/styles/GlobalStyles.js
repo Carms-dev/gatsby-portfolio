@@ -10,9 +10,8 @@ const GlobalStyles = createGlobalStyle`
     --blue: #087E8B;
     --grey: #424C55;
     --gray: var(--grey);
-    --light: #FAFAFA;
-    --grey-light: #F2f3f4;
-    --gray-light: var(--grey-light);
+    --light: #F4F7F6;
+    --off-white: #fff6f0;
     --black: #393939;
   }
   html {
@@ -112,14 +111,14 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
   section {
-    padding-top: 8rem;
+    padding-top: 3rem;
   }
   .bg-whiteish {
     background: rgba(230, 230, 230, 0.9);
   }
   @media (min-width: 640px) {
     section {
-      padding-top: 10rem;
+      padding-top: 8rem;
     }
   }
 `;

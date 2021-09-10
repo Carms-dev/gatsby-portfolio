@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -12,26 +12,8 @@ function Header({
 }) {
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
-  // Update Header Style based on scrollY position
-  const headerRef = useRef();
-  const updateHeader = () => {
-    if (window.scrollY >= window.innerHeight) {
-      headerRef.current.classList.add('bg-whiteish');
-    } else {
-      headerRef.current.classList.remove('bg-whiteish');
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', updateHeader);
-
-    return () => {
-      window.removeEventListener('scroll', updateHeader);
-    };
-  }, []);
-
   return (
-    <HeaderStyles ref={headerRef}>
+    <HeaderStyles>
       <Link
         to="/"
         className="btn-logo"
@@ -47,15 +29,21 @@ function Header({
           <p>Full Stack Developer</p>
         </div>
       </Link>
-      <button className="btn-menu" type="button" onClick={toggleMenu}>
-        <Icon icon={`${isMenuOpen ? 'akar-icons:cross' : 'mdi:hamburger'}`} />
-      </button>
-      <Menu
-        isMenuOpen={isMenuOpen}
-        setMenuOpen={setMenuOpen}
-        pausedRef={pausedRef}
-        sectionRefs={sectionRefs}
-      />
+      {
+        pausedRef && (
+          <>
+            <button className="btn-menu" type="button" onClick={toggleMenu} aria-label="Open or Close Menu">
+              <Icon icon={`${isMenuOpen ? 'uiw:menu-unfold' : 'uiw:menu-fold'}`} />
+            </button>
+            <Menu
+              isMenuOpen={isMenuOpen}
+              setMenuOpen={setMenuOpen}
+              pausedRef={pausedRef}
+              sectionRefs={sectionRefs}
+            />
+          </>
+        )
+      }
       {isMenuOpen && <DarkOverlay isMenuOpen={isMenuOpen} setMenuOpen={setMenuOpen} />}
     </HeaderStyles>
   );
@@ -74,13 +62,13 @@ Header.propTypes = {
 
 const HeaderStyles = styled.header`
   z-index: 10;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   display: grid;
   grid-auto-flow: column;
-  align-self: flex-start;
+  align-items: center;
 
   .btn-logo {
     display: grid;
@@ -94,12 +82,16 @@ const HeaderStyles = styled.header`
     }
   }
   .btn-menu {
+    position:fixed;
+    top: 1rem;
+    right: 1rem;
     padding: 1rem;
     justify-self: flex-end;
     z-index: 12;
+    backdrop-filter: blur(2em);
   }
   .btn-menu svg {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--dark);
   }
   .btn-logo, .btn-menu {
@@ -111,7 +103,7 @@ const HeaderStyles = styled.header`
       display: block;
     }
     .btn-menu svg {
-      font-size: 4.5rem;
+      font-size: 4rem;
     }
     .btn-logo, .btn-menu {
       padding: 2rem;
