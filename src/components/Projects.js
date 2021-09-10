@@ -92,7 +92,7 @@ export default function Projects({ projects, allTools }) {
           nodes {
             base
             childImageSharp {
-              gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+              gatsbyImageData(width: 610, layout: CONSTRAINED, placeholder: BLURRED)
               original {
                 width
                 height
