@@ -48,7 +48,7 @@ function Header({
         </div>
       </Link>
       <button className="btn-menu" type="button" onClick={toggleMenu} aria-label="Open or Close Menu">
-        <Icon icon={`${isMenuOpen ? 'akar-icons:cross' : 'mdi:hamburger'}`} />
+        <Icon icon={`${isMenuOpen ? 'uiw:menu-unfold' : 'uiw:menu-fold'}`} />
       </button>
       <Menu
         isMenuOpen={isMenuOpen}
@@ -99,7 +99,7 @@ const HeaderStyles = styled.header`
     z-index: 12;
   }
   .btn-menu svg {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--dark);
   }
   .btn-logo, .btn-menu {
@@ -111,7 +111,7 @@ const HeaderStyles = styled.header`
       display: block;
     }
     .btn-menu svg {
-      font-size: 4.5rem;
+      font-size: 4rem;
     }
     .btn-logo, .btn-menu {
       padding: 2rem;
