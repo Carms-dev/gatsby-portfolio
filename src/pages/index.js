@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { graphql } from 'gatsby';
 import { Icon } from '@iconify/react';
+import PropTypes from 'prop-types';
 import Icons from '../components/Icons';
 
 import Layout from '../components/Layout';
@@ -105,7 +106,7 @@ export default function IndexPage({ data }) {
             <p>I’m passionate about building impactful applications to improve lives around me. I’m a versatile Full Stack Developer. I’m climate and social justice-minded, communicative, fun, curious, adaptive and always up for a new challenge.</p>
             <a
               className="btn btn-icon"
-              href={data.file.publicURL}
+              href={data.resume.publicURL}
               target="_blank"
               rel="noreferrer"
             >
@@ -195,10 +196,21 @@ export default function IndexPage({ data }) {
   );
 }
 
+IndexPage.defaultProps = {
+  data: {},
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    resume: PropTypes.shape({
+      publicURL: PropTypes.string,
+    }),
+  }),
+};
+
 export const data = graphql`
   query {
-    file(extension: {eq: "pdf"}) {
-      id
+    resume: file(extension: {eq: "pdf"}) {
       publicURL
     }
   }
