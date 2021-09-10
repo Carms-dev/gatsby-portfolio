@@ -5,9 +5,84 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Icons from './Icons';
 
+export default function Projects({ projects, allTools }) {
+  const { images, videos } = useStaticQuery(
+    graphql`
+      {
+        images: allFile(filter: {relativeDirectory: {eq: "projects"},  extension: { ne: "mp4" }}) {
+          nodes {
+            base
+            childImageSharp {
+              gatsbyImageData(width: 610, layout: CONSTRAINED, placeholder: BLURRED)
+              original {
+                width
+                height
+                src
+              }
+            }
+          }
+        }
+        videos: allFile(filter: { relativeDirectory: {eq: "projects"}, extension: { eq: "mp4" } }) {
+          nodes {
+            publicURL
+            base
+          }
+        }
+      }
+    `,
+  );
+
+  return (
+    <ProjectsStyles>
+      {projects.map((project) => {
+        const image = images.nodes.find((node) => node.base === project.image);
+        const icons = allTools.filter((tool) => project.stack.includes(tool.name));
+        const demo = videos.nodes.find((node) => node.base === project.demo);
+        return (
+          <div key={project.title} className="project">
+            <div className="project-media">
+              <GatsbyImage
+                image={image?.childImageSharp.gatsbyImageData}
+                alt={project.title}
+                imgStyle={{ objectFit: 'contain' }}
+                className="project-img"
+              />
+              {demo
+              && (
+              // eslint-disable-next-line jsx-a11y/media-has-caption
+                <video className="project-mp4" width="100%" autoPlay muted loop>
+                  <source src={demo.publicURL} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              )}
+              <div className="roles">
+                {project.roles.map((role) => <small key={`${project.title} - ${role}`} className="pill">{role}</small>)}
+              </div>
+            </div>
+            <div className="project-info">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <Icons icons={icons} labelHidden />
+              <div className="btns-inline">
+                <a className="btn" href={project.website} target="_blank" rel="noreferrer">live site</a>
+                {project.source && <a className="btn" href={project.source} target="_blank" rel="noreferrer">source</a>}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </ProjectsStyles>
+  );
+}
+
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allTools: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
 const ProjectsStyles = styled.div`
   display: grid;
-  grid-gap: 5rem;
+  grid-gap: 10rem;
   padding-bottom: 6rem;
 
   .project {
@@ -84,78 +159,3 @@ const ProjectsStyles = styled.div`
     }
   }
 `;
-
-export default function Projects({ projects, allTools }) {
-  const { images, videos } = useStaticQuery(
-    graphql`
-      {
-        images: allFile(filter: {relativeDirectory: {eq: "projects"},  extension: { ne: "mp4" }}) {
-          nodes {
-            base
-            childImageSharp {
-              gatsbyImageData(width: 610, layout: CONSTRAINED, placeholder: BLURRED)
-              original {
-                width
-                height
-                src
-              }
-            }
-          }
-        }
-        videos: allFile(filter: { relativeDirectory: {eq: "projects"}, extension: { eq: "mp4" } }) {
-          nodes {
-            publicURL
-            base
-          }
-        }
-      }
-    `,
-  );
-
-  return (
-    <ProjectsStyles>
-      {projects.map((project) => {
-        const image = images.nodes.find((node) => node.base === project.image);
-        const icons = allTools.filter((tool) => project.stack.includes(tool.name));
-        const demo = videos.nodes.find((node) => node.base === project.demo);
-        return (
-          <div key={project.title} className="project">
-            <div className="project-media">
-              <GatsbyImage
-                image={image?.childImageSharp.gatsbyImageData}
-                alt={project.title}
-                imgStyle={{ objectFit: 'contain' }}
-                className="project-img"
-              />
-              {demo
-              && (
-              // eslint-disable-next-line jsx-a11y/media-has-caption
-                <video className="project-mp4" width="100%" autoPlay muted loop>
-                  <source src={demo.publicURL} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              )}
-              <div className="roles">
-                {project.roles.map((role) => <small key={`${project.title} - ${role}`} className="pill">{role}</small>)}
-              </div>
-            </div>
-            <div className="project-info">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <Icons icons={icons} labelHidden />
-              <div className="btns-inline">
-                <a className="btn" href={project.website} target="_blank" rel="noreferrer">live site</a>
-                {project.source && <a className="btn" href={project.source} target="_blank" rel="noreferrer">source</a>}
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </ProjectsStyles>
-  );
-}
-
-Projects.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.object).isRequired,
-  allTools: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
