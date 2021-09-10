@@ -64,8 +64,15 @@ export default function Projects({ projects, allTools }) {
               <p>{project.description}</p>
               <Icons icons={icons} labelHidden />
               <div className="btns-inline">
-                <a className="btn" href={project.website} target="_blank" rel="noreferrer">live site</a>
-                {project.source && <a className="btn" href={project.source} target="_blank" rel="noreferrer">source</a>}
+                <a className="btn" href={project.website} target="_blank" rel="noreferrer">
+                  <span>live site</span>
+                </a>
+                {project.source
+                && (
+                <a className="btn" href={project.source} target="_blank" rel="noreferrer">
+                  <span>source</span>
+                </a>
+                )}
               </div>
             </div>
           </div>

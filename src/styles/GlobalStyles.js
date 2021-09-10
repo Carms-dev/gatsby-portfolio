@@ -78,14 +78,38 @@ const GlobalStyles = createGlobalStyle`
     border: 3px solid var(--dark);
     transition: all 0.5s;
     background: rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
     cursor: pointer;
+    position: relative;
   }
-  .btn:hover {
+  .btn span {
+    position: relative;
+    z-index: 2;
+  }
+  .btn:after{
+    z-index: 1;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--yellow);
+    transition: all .35s;
+  }
+  .btn:hover{
+    /* color: #fff; */
+  }
+
+  .btn:hover:after{
+    width: 100%;
+  }
+  /* .btn:hover {
     background-color: rgba(255, 198, 0, 0.5);
     border-color: rgba(255, 198, 0, 0.7);
     ;
-  }
-  .btn-icon {
+  } */
+  .btn-icon span {
     display: flex;
     align-items: center;
     justify-content: center;

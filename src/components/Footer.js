@@ -25,7 +25,9 @@ export default function Footer({ pausedRef }) {
       {pausedRef
         && (
         <button className="btn btn-top" onClick={scrollToTop} type="button" aria-label="Go To Page Top">
-          <Icon icon="bi:arrow-up" />
+          <span>
+            <Icon icon="bi:arrow-up" />
+          </span>
         </button>
         )}
     </FooterStyles>
@@ -58,6 +60,15 @@ const FooterStyles = styled.footer`
     left: 50%;
     transform: translateX(-50%);
     padding: 3rem 1.5rem;
+  }
+  .btn-top:after {
+    top: unset;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+  }
+  .btn-top:hover:after {
+    height: 100%;
   }
   .btn-top:hover svg {
     transform: rotate(360deg);

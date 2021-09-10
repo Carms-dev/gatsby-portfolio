@@ -88,8 +88,10 @@ export default function IndexPage({ data }) {
           </h1>
           <p>I&apos;m a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
           <button type="button" className="btn btn-icon" onClick={scrollToAbout} aria-label="Go to About">
-            What I do
-            <Icon icon="bytesize:arrow-right" style={{ fontSize: '2rem' }} />
+            <span>
+              What I do
+              <Icon icon="akar-icons:arrow-right" style={{ fontSize: '2.5rem' }} />
+            </span>
           </button>
         </div>
       </HeroStyles>
@@ -112,8 +114,10 @@ export default function IndexPage({ data }) {
               target="_blank"
               rel="noreferrer"
             >
-              Resume
-              <Icon icon="clarity:download-line" style={{ fontSize: '2rem' }} />
+              <span>
+                Resume
+                <Icon icon="akar-icons:arrow-up-right" style={{ fontSize: '2rem' }} />
+              </span>
             </a>
           </div>
 
@@ -189,8 +193,10 @@ export default function IndexPage({ data }) {
               <textarea name="message" id="message" cols="30" rows="4" required />
             </label>
             <button className="btn btn-icon" type="submit" aria-label="Submit Contact Form">
-              Send
-              <Icon icon="la:telegram-plane" style={{ fontSize: '2rem' }} />
+              <span>
+                Send
+                <Icon icon="la:telegram-plane" style={{ fontSize: '2rem' }} />
+              </span>
             </button>
           </form>
 
