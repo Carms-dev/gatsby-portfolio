@@ -144,10 +144,9 @@ const ProjectsStyles = styled.div`
   }
   .pill {
     font-size: 1.6rem;
-    padding: 0.5rem;
+    padding: 1rem;
     line-height: 1;
     background-color: var(--yellow-light);
-    border: 3px solid var(--yellow);
     white-space: nowrap;
   }
 
