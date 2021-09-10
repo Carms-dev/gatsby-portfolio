@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect, useRef } from 'react';
 import { graphql } from 'gatsby';
 import { Icon } from '@iconify/react';
@@ -76,6 +75,7 @@ export default function IndexPage({ data }) {
     const top = sectionRefs.current[1].offsetTop;
     window.scrollTo({ top, behavior: 'smooth' });
   };
+
   return (
     <Layout pausedRef={pausedRef} sectionRefs={sectionRefs}>
       <Seo title="Carms Ng | Full Stack Developer" />
@@ -85,7 +85,7 @@ export default function IndexPage({ data }) {
         <div className="container">
           <h1>Hi folks! Carms here!</h1>
           <p>I'm a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
-          <button type="button" className="btn btn-icon" onClick={scrollToAbout}>
+          <button type="button" className="btn btn-icon" onClick={scrollToAbout} aria-label="Go to About">
             What I do
             <Icon icon="bytesize:arrow-right" style={{ fontSize: '2rem' }} />
           </button>
@@ -119,6 +119,7 @@ export default function IndexPage({ data }) {
             <div>
               <div className="btns-text">
                 <button
+                  aria-label="Favorite Tools"
                   disabled={favoritesOnly}
                   onClick={toggleTools}
                   className={`btn-text ${favoritesOnly ? 'active' : ''}`}
@@ -128,6 +129,7 @@ export default function IndexPage({ data }) {
                 </button>
                 <p>/</p>
                 <button
+                  aria-label="All Tools"
                   disabled={!favoritesOnly}
                   onClick={toggleTools}
                   className={`btn-text ${favoritesOnly ? '' : 'active'}`}
@@ -184,7 +186,7 @@ export default function IndexPage({ data }) {
               Message
               <textarea name="message" id="message" cols="30" rows="4" required />
             </label>
-            <button className="btn btn-icon" type="submit">
+            <button className="btn btn-icon" type="submit" aria-label="Submit Contact Form">
               Send
               <Icon icon="la:telegram-plane" style={{ fontSize: '2rem' }} />
             </button>

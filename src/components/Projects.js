@@ -125,7 +125,6 @@ export default function Projects({ projects, allTools }) {
                 image={image?.childImageSharp.gatsbyImageData}
                 alt={project.title}
                 imgStyle={{ objectFit: 'contain' }}
-                style={{ maxHeight: '50vh' }}
                 className="project-img"
               />
               {demo
@@ -133,6 +132,7 @@ export default function Projects({ projects, allTools }) {
               // eslint-disable-next-line jsx-a11y/media-has-caption
                 <video className="project-mp4" width="100%" autoPlay muted loop>
                   <source src={demo.publicURL} type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
               )}
               <div className="roles">

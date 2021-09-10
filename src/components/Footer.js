@@ -18,13 +18,11 @@ export default function Footer({ pausedRef }) {
   return (
     <FooterStyles>
       <h4>
-        © Carms Ng
-        {' '}
-        {new Date().getFullYear()}
+        {`© Carms Ng ${new Date().getFullYear()}`}
       </h4>
       {/* Social */}
       <SocialIcons />
-      <button onClick={scrollToTop} type="button" className="btn">
+      <button className="btn btn-top" onClick={scrollToTop} type="button" aria-label="Go To Page Top">
         <Icon icon="bi:arrow-up" />
       </button>
     </FooterStyles>
@@ -47,14 +45,14 @@ const FooterStyles = styled.footer`
   justify-content: space-between;
   align-items: center;
 
-  button {
+  .btn-top {
     position: absolute;
     top: -7rem;
     left: 50%;
     transform: translateX(-50%);
     padding: 3rem 1.5rem;
   }
-  button:hover svg {
+  .btn-top:hover svg {
     transform: rotate(360deg);
   }
 `;

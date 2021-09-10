@@ -1,7 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
+export default function IconItem({ tool, labelHidden }) {
+  return (
+    <a href={tool.url} target="_blank" rel="noreferrer">
+      <IconStyles color={tool.color} labelHidden={labelHidden}>
+        <div className="icon">
+          <Icon icon={tool.icon} />
+        </div>
+        <p>{tool.name}</p>
+      </IconStyles>
+    </a>
+  );
+}
+
+IconItem.propTypes = {
+  tool: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    url: PropTypes.string,
+    color: PropTypes.string,
+  }).isRequired,
+  labelHidden: PropTypes.bool.isRequired,
+};
 
 const IconStyles = styled.div`
   display: grid;
@@ -49,26 +72,3 @@ const IconStyles = styled.div`
     opacity: 1;
   }
 `;
-
-export default function IconItem({ tool, labelHidden }) {
-  return (
-    <a href={tool.url} target="_blank" rel="noreferrer">
-      <IconStyles color={tool.color} labelHidden={labelHidden}>
-        <div className="icon">
-          <Icon icon={tool.icon} />
-        </div>
-        <p>{tool.name}</p>
-      </IconStyles>
-    </a>
-  );
-}
-
-IconItem.propTypes = {
-  tool: PropTypes.object,
-  labelHidden: PropTypes.bool,
-};
-
-IconItem.defaultProps = {
-  tool: {},
-  labelHidden: false,
-};

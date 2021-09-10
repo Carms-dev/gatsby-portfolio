@@ -47,7 +47,7 @@ function Header({
           <p>Full Stack Developer</p>
         </div>
       </Link>
-      <button className="btn-menu" type="button" onClick={toggleMenu}>
+      <button className="btn-menu" type="button" onClick={toggleMenu} aria-label="Open or Close Menu">
         <Icon icon={`${isMenuOpen ? 'akar-icons:cross' : 'mdi:hamburger'}`} />
       </button>
       <Menu

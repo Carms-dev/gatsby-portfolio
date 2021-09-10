@@ -72,6 +72,7 @@ export default function Menu({
 
         return (
           <button
+            aria-label={`Go to ${label}`}
             type="button"
             key={`menu-${ref}`}
             onClick={handleClick}

@@ -5,15 +5,15 @@ import styled from 'styled-components';
 export default function SocialIcons() {
   return (
     <SocialIconsStyles>
-      <a href="https://github.com/carms-dev" target="_blank" rel="noreferrer">
+      <button type="button" aria-label="Github profile" href="https://github.com/carms-dev" target="_blank" rel="noreferrer">
         <Icon icon="feather:github" />
-      </a>
-      <a href="https://www.linkedin.com/in/carmsng/" target="_blank" rel="noreferrer">
+      </button>
+      <button type="button" aria-label="LinkedIn profile" href="https://www.linkedin.com/in/carmsng/" target="_blank" rel="noreferrer">
         <Icon icon="feather:linkedin" />
-      </a>
-      <a href="mailto: contact@carms-ng.com" target="_blank" rel="noreferrer">
+      </button>
+      <button type="button" aria-label="Email" href="mailto: contact@carms-ng.com" target="_blank" rel="noreferrer">
         <Icon icon="feather:mail" />
-      </a>
+      </button>
     </SocialIconsStyles>
   );
 }
@@ -24,7 +24,7 @@ const SocialIconsStyles = styled.div`
   grid-gap: 1.5rem;
   place-content: center;
 
-  a {
+  button {
     width: 3rem;
     height: 3rem;
     display: grid;
@@ -38,11 +38,11 @@ const SocialIconsStyles = styled.div`
       color: var(--dark);
     }
   }
-  a:hover {
+  button:hover {
     border-radius: 0;
   }
   @media (min-width: 640px) {
-    a {
+    button {
       width: 4rem;
       height: 4rem;
       svg {
