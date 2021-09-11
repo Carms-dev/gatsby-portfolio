@@ -168,7 +168,7 @@ export default function IndexPage({ data }) {
             <Projects projects={workProjects} allTools={allTools} />
           </div>
           {/* Hobbies */}
-          <div style={{ marginTop: '10rem' }}>
+          <div style={{ marginTop: '5rem' }}>
             <h2>hobby</h2>
             <Projects projects={hobbies} allTools={allTools} />
           </div>
