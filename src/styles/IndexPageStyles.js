@@ -34,11 +34,13 @@ const HeroStyles = styled.section`
     position: absolute;
     left: 1rem;
     bottom: 1rem;
-    /* animation */
+  }
+  /* animate header on mount */
+  h1.animated:after {
     animation-duration: 0.5s;
     animation-name: highlight;
     animation-fill-mode: forwards;
-    animation-delay: 0.5s;
+    animation-delay: 1s;
   }
   p {
     font-size: 2rem;
