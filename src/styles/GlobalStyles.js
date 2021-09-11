@@ -3,15 +3,14 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   :root {
     --dark: #424C55;
-    --yellow: #ffc600;
-    --yellow-light: #F7DC79;
-    --blue-light: #80e7ff;
-    --green: #5df2ae;
-    --blue: #087E8B;
-    --grey: #424C55;
-    --gray: var(--grey);
+    --opaque: rgba(255, 255, 255, 0.3);
     --light: #F4F7F6;
     --off-white: #fff6f0;
+    --yellow: #ffc600;
+    --yellow-light: #F7DC79;
+    --blue: #80e7ff;
+    --grey: #424C55;
+    --gray: var(--grey);
     --black: #393939;
     --fast: all 0.6s ease;
     --slow: all 0.9s ease;
@@ -50,10 +49,10 @@ const GlobalStyles = createGlobalStyle`
   }
   h2 {
     margin-bottom: 3rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--yellow) 45%);
+    background: linear-gradient(180deg, transparent 55%, var(--yellow) 45%);
   }
   h3 {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 45%);
+    background: linear-gradient(180deg, transparent 55%, var(--blue) 45%);
   }
   p {
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -78,7 +77,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 2rem;
     padding: 6px 20px;
     border: 3px solid var(--dark);
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--opaque);
     letter-spacing: 1px;
     cursor: pointer;
     position: relative;
@@ -121,9 +120,6 @@ const GlobalStyles = createGlobalStyle`
   }
   section {
     padding-top: 3rem;
-  }
-  .bg-whiteish {
-    background: rgba(230, 230, 230, 0.9);
   }
   @media (min-width: 640px) {
     section {

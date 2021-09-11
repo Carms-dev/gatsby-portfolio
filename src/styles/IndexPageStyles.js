@@ -16,7 +16,7 @@ const HeroStyles = styled.section`
   background-position: 70% 50%;
   h1 {
     position: relative;
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--opaque);
     padding: 1rem 1rem 0 1rem;
     line-height: 1;
   }
@@ -44,7 +44,7 @@ const HeroStyles = styled.section`
   }
   p {
     font-size: 2rem;
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--opaque);
     margin: 1rem 0;
     padding: 0 1rem;
   }
@@ -84,7 +84,7 @@ const AboutStyles = styled.section`
   }
   .fifty-fifty {
     display: grid;
-    grid-gap: 3rem;
+    grid-gap: 5rem;
     padding-bottom: 6rem;
   }
 
@@ -110,7 +110,7 @@ const AboutStyles = styled.section`
       bottom: 0;
       left: 0;
       content: "";
-      background: var(--blue-light);
+      background: var(--blue);
       width: 0%;
       height: 45%;
       transition: var(--fast);
