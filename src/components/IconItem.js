@@ -40,7 +40,7 @@ const IconStyles = styled.div`
     border: 1px solid lightgray;
     display: grid;
     place-content: center center;
-    transition: all 1s ease;
+    transition: var(--slow);
   }
   &:hover .icon {
     border-radius: 0;
@@ -49,7 +49,7 @@ const IconStyles = styled.div`
     width: 40px;
     height: 40px;
     color: ${(props) => props.color};
-    transition: all 1s ease;
+    transition: var(--slow);
     opacity: 1;
   }
   &:hover svg {
@@ -59,7 +59,7 @@ const IconStyles = styled.div`
   p {
     margin: 0;
     font-size: 1.6rem;
-    transition: all 1s ease;
+    transition: var(--slow);
     visibility: ${(props) => (props.labelHidden ? 'hidden' : 'visible')};
     opacity: ${(props) => (props.labelHidden ? 0 : 1)};
     position: ${(props) => (props.labelHidden ? 'absolute' : 'relative')};

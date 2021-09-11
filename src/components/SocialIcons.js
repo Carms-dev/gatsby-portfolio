@@ -32,7 +32,7 @@ const SocialIconsStyles = styled.div`
     background: var(--yellow);
     padding: 1rem;
     border-radius: 50%;
-    transition: all 1s ease;
+    transition: var(--slow);
     svg {
       font-size: 1.6rem;
       color: var(--dark);

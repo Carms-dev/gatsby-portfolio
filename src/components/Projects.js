@@ -105,7 +105,7 @@ const ProjectsStyles = styled.div`
     position: relative;
     display: grid;
     .project-img {
-      transition: all 1s ease;
+      transition: var(--slow);
     }
     .project-mp4 {
       position: absolute;
@@ -115,7 +115,7 @@ const ProjectsStyles = styled.div`
       transform: translate(-50%, -50%);
       visibility: hidden;
       opacity: 0;
-      transition: all 1s ease;
+      transition: var(--slow);
       max-height: 100%;
       object-fit: contain;
     }
