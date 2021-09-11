@@ -111,7 +111,7 @@ const AboutStyles = styled.section`
       background: var(--blue-light);
       width: 0%;
       height: 45%;
-      transition: all 0.5s ease;
+      transition: var(--fast);
       opacity: 0;
     }
     &.active:after {

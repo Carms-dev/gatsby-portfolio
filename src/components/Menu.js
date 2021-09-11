@@ -112,7 +112,7 @@ const MenuStyles = styled.div`
   top: 0;
 
   display: grid;
-  transition: all 1s ease;
+  transition: var(--slow);
   justify-items: flex-start;
   transform: ${(props) => (props.isMenuOpen ? '' : 'translate(0, -100%)')};
   background: var(--light);
@@ -137,7 +137,7 @@ const MenuStyles = styled.div`
       height: 45%;
       opacity: 0;
       background: var(--yellow);
-      transition: all 0.5s ease;
+      transition: var(--fast);
     }
     &:hover:after {
       opacity: 1;
