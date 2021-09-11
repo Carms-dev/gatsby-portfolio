@@ -66,6 +66,8 @@ const IconStyles = styled.div`
     top: ${(props) => (props.labelHidden ? '50%' : 'unset')};
     left: ${(props) => (props.labelHidden ? '50%' : 'unset')};
     transform: ${(props) => (props.labelHidden ? 'translate(-50%, -50%)' : '')};
+    padding: ${(props) => (props.labelHidden ? '1px' : 'inherit')};
+    background: ${(props) => (props.labelHidden ? 'var(--light)' : 'transparent')};
   }
   &:hover p {
     visibility: visible;
