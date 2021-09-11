@@ -62,6 +62,7 @@ const HeroStyles = styled.section`
       font-size: 2.5rem;
     }
   }
+
 `;
 
 const AboutStyles = styled.section`
@@ -90,11 +91,39 @@ const AboutStyles = styled.section`
     grid-auto-flow: column;
     place-content: center;
   }
+
+  .btn-text {
+    text-transform: lowercase;
+    line-height: 90%;
+    padding: 0 10px;
+    width: max-content;
+    position: relative;
+    span {
+      position: relative;
+      z-index: 2
+    }
+    &:after {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background: var(--blue-light);
+      width: 0%;
+      height: 45%;
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+    &.active:after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
   @media (min-width: 768px) {
     .three-forth {
       grid-template-columns: 3fr 1fr;
-      padding-top: 2rem;
-      padding-bottom: 8rem;
+      padding-top: 4rem;
+      padding-bottom: 10rem;
     }
     .fifty-fifty {
       grid-template-columns: 1fr 1fr;

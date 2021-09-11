@@ -48,19 +48,10 @@ const GlobalStyles = createGlobalStyle`
   }
   h2 {
     margin-bottom: 3rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--yellow) 45%);
   }
   h3 {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
-  }
-  .btn-text {
-    text-transform: lowercase;
-    line-height: 90%;
-    padding: 0 10px;
-    width: max-content;
-  }
-  .btn-text.active {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 45%);
   }
   p {
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

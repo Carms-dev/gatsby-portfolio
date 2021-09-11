@@ -127,7 +127,7 @@ export default function IndexPage({ data }) {
                   className={`btn-text ${favoritesOnly ? 'active' : ''}`}
                   type="button"
                 >
-                  Favorite Tools
+                  <span>Favorites</span>
                 </button>
                 <p>/</p>
                 <button
@@ -137,7 +137,7 @@ export default function IndexPage({ data }) {
                   className={`btn-text ${favoritesOnly ? '' : 'active'}`}
                   type="button"
                 >
-                  Tool Box
+                  <span>Tool Box</span>
                 </button>
               </div>
               <Icons icons={favoritesOnly ? favorites : allTools} />
@@ -159,7 +159,7 @@ export default function IndexPage({ data }) {
             <Projects projects={workProjects} allTools={allTools} />
           </div>
           {/* Hobbies */}
-          <div>
+          <div style={{ marginTop: '10rem' }}>
             <h2>hobby</h2>
             <Projects projects={hobbies} allTools={allTools} />
           </div>
