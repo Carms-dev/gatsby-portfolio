@@ -42,10 +42,10 @@ const Typography = createGlobalStyle`
       font-size: 6rem;
     }
     h2 {
-      font-size: 5rem;
+      font-size: 5.5rem;
     }
     h3, .btn-text {
-      font-size: 4rem;
+      font-size: 4.5rem;
     }
     h4 {
       font-size: 3rem;

@@ -2,14 +2,43 @@ import styled from 'styled-components';
 import background from '../assets/images/background.jpg';
 
 const HeroStyles = styled.section`
+  @keyframes highlight {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
   height: 100vh;
   background-image: url(${background});
   background-size: cover;
   background-position: 70% 50%;
   h1 {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 55%, rgba(255, 198, 0, 0.7) 35%);
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
     padding: 1rem 1rem 0 1rem;
     line-height: 1;
+  }
+  h1 span {
+    position: relative;
+    z-index: 2;
+  }
+  h1:after {
+    z-index: 1;
+    content: "";
+    background: var(--yellow);
+    opacity: 0.7;
+    width: 0%;
+    height: 50%;
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    /* animation */
+    animation-duration: 0.5s;
+    animation-name: highlight;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
   }
   p {
     font-size: 2rem;
@@ -33,6 +62,7 @@ const HeroStyles = styled.section`
       font-size: 2.5rem;
     }
   }
+
 `;
 
 const AboutStyles = styled.section`
@@ -61,11 +91,39 @@ const AboutStyles = styled.section`
     grid-auto-flow: column;
     place-content: center;
   }
+
+  .btn-text {
+    text-transform: lowercase;
+    line-height: 90%;
+    padding: 0 10px;
+    width: max-content;
+    position: relative;
+    span {
+      position: relative;
+      z-index: 2
+    }
+    &:after {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background: var(--blue-light);
+      width: 0%;
+      height: 45%;
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+    &.active:after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
   @media (min-width: 768px) {
     .three-forth {
       grid-template-columns: 3fr 1fr;
-      padding-top: 2rem;
-      padding-bottom: 8rem;
+      padding-top: 4rem;
+      padding-bottom: 10rem;
     }
     .fifty-fifty {
       grid-template-columns: 1fr 1fr;

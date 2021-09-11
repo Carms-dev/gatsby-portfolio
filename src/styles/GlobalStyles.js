@@ -48,19 +48,10 @@ const GlobalStyles = createGlobalStyle`
   }
   h2 {
     margin-bottom: 3rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--yellow) 45%);
   }
   h3 {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
-  }
-  .btn-text {
-    text-transform: lowercase;
-    line-height: 90%;
-    padding: 0 10px;
-    width: max-content;
-  }
-  .btn-text.active {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 35%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, var(--blue-light) 45%);
   }
   p {
     font-family: Overpass, --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -87,14 +78,38 @@ const GlobalStyles = createGlobalStyle`
     border: 3px solid var(--dark);
     transition: all 0.5s;
     background: rgba(255, 255, 255, 0.3);
+    letter-spacing: 1px;
     cursor: pointer;
+    position: relative;
   }
-  .btn:hover {
+  .btn span {
+    position: relative;
+    z-index: 2;
+  }
+  .btn:after{
+    z-index: 1;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--yellow);
+    transition: all .35s;
+  }
+  .btn:hover{
+    /* color: #fff; */
+  }
+
+  .btn:hover:after{
+    width: 100%;
+  }
+  /* .btn:hover {
     background-color: rgba(255, 198, 0, 0.5);
     border-color: rgba(255, 198, 0, 0.7);
     ;
-  }
-  .btn-icon {
+  } */
+  .btn-icon span {
     display: flex;
     align-items: center;
     justify-content: center;

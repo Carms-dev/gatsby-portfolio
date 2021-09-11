@@ -91,6 +91,7 @@ const HeaderStyles = styled.header`
     backdrop-filter: blur(2em);
   }
   .btn-menu svg {
+    transform: rotate(-90deg);
     font-size: 3rem;
     color: var(--dark);
   }
@@ -103,6 +104,7 @@ const HeaderStyles = styled.header`
       display: block;
     }
     .btn-menu svg {
+      transform: rotate(0 );
       font-size: 4rem;
     }
     .btn-logo, .btn-menu {

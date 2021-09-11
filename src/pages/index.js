@@ -83,11 +83,15 @@ export default function IndexPage({ data }) {
       {/* Hero */}
       <HeroStyles ref={addToRefs} id="home" data-index="0">
         <div className="container">
-          <h1>Hi folks! Carms here!</h1>
+          <h1>
+            <span>Hi folks! Carms here!</span>
+          </h1>
           <p>I&apos;m a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
           <button type="button" className="btn btn-icon" onClick={scrollToAbout} aria-label="Go to About">
-            What I do
-            <Icon icon="bytesize:arrow-right" style={{ fontSize: '2rem' }} />
+            <span>
+              What I do
+              <Icon icon="akar-icons:arrow-right" style={{ fontSize: '2.5rem' }} />
+            </span>
           </button>
         </div>
       </HeroStyles>
@@ -110,8 +114,10 @@ export default function IndexPage({ data }) {
               target="_blank"
               rel="noreferrer"
             >
-              Resume
-              <Icon icon="clarity:download-line" style={{ fontSize: '2rem' }} />
+              <span>
+                Resume
+                <Icon icon="akar-icons:arrow-up-right" style={{ fontSize: '2rem' }} />
+              </span>
             </a>
           </div>
 
@@ -125,7 +131,7 @@ export default function IndexPage({ data }) {
                   className={`btn-text ${favoritesOnly ? 'active' : ''}`}
                   type="button"
                 >
-                  Favorite Tools
+                  <span>Favorites</span>
                 </button>
                 <p>/</p>
                 <button
@@ -135,7 +141,7 @@ export default function IndexPage({ data }) {
                   className={`btn-text ${favoritesOnly ? '' : 'active'}`}
                   type="button"
                 >
-                  Tool Box
+                  <span>Tool Box</span>
                 </button>
               </div>
               <Icons icons={favoritesOnly ? favorites : allTools} />
@@ -157,7 +163,7 @@ export default function IndexPage({ data }) {
             <Projects projects={workProjects} allTools={allTools} />
           </div>
           {/* Hobbies */}
-          <div>
+          <div style={{ marginTop: '10rem' }}>
             <h2>hobby</h2>
             <Projects projects={hobbies} allTools={allTools} />
           </div>
@@ -187,8 +193,10 @@ export default function IndexPage({ data }) {
               <textarea name="message" id="message" cols="30" rows="4" required />
             </label>
             <button className="btn btn-icon" type="submit" aria-label="Submit Contact Form">
-              Send
-              <Icon icon="la:telegram-plane" style={{ fontSize: '2rem' }} />
+              <span>
+                Send
+                <Icon icon="la:telegram-plane" style={{ fontSize: '2rem' }} />
+              </span>
             </button>
           </form>
 
