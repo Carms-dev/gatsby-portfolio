@@ -13,7 +13,7 @@ function Header({
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
   return (
-    <HeaderStyles>
+    <HeaderStyles isMenuOpen={isMenuOpen}>
       <Link
         to="/"
         className="btn-logo"
@@ -33,7 +33,7 @@ function Header({
         pausedRef && (
           <>
             <button className="btn-menu" type="button" onClick={toggleMenu} aria-label="Open or Close Menu">
-              <Icon icon={`${isMenuOpen ? 'uiw:menu-unfold' : 'uiw:menu-fold'}`} />
+              <Icon icon="uiw:menu-unfold" />
             </button>
             <Menu
               isMenuOpen={isMenuOpen}
@@ -89,6 +89,8 @@ const HeaderStyles = styled.header`
     justify-self: flex-end;
     z-index: 12;
     backdrop-filter: blur(2em);
+    transition: var(--slow);
+    transform: ${(props) => (props.isMenuOpen ? 'rotate(-180deg)' : 'rotate(0deg)')}
   }
   .btn-menu svg {
     transform: rotate(-90deg);
