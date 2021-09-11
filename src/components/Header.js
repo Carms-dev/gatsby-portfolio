@@ -32,8 +32,13 @@ function Header({
       {
         pausedRef && (
           <>
-            <button className="btn-menu" type="button" onClick={toggleMenu} aria-label="Open or Close Menu">
-              <Icon icon="uiw:menu-unfold" />
+            <button
+              className="btn-menu"
+              type="button"
+              onClick={toggleMenu}
+              aria-label="Open or Close Menu"
+            >
+              <Icon icon="uiw:menu-fold" />
             </button>
             <Menu
               isMenuOpen={isMenuOpen}
