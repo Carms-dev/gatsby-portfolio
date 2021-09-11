@@ -32,6 +32,8 @@ export default function IndexPage({ data }) {
   // You can access the elements with itemsRef.current[n]
   const sectionRefs = useRef([]);
 
+  const headerRef = useRef();
+
   // Compile all the refs
   const addToRefs = (el) => {
     if (el && !sectionRefs.current.includes(el)) {
@@ -40,6 +42,9 @@ export default function IndexPage({ data }) {
   };
 
   useEffect(() => {
+    // animate header on mount
+    headerRef.current.classList.add('animated');
+
     // Set up observer to scroll into view the next section
     const observer = new IntersectionObserver(([entry]) => {
       if (!pausedRef.current && entry.isIntersecting) {
@@ -83,7 +88,7 @@ export default function IndexPage({ data }) {
       {/* Hero */}
       <HeroStyles ref={addToRefs} id="home" data-index="0">
         <div className="container">
-          <h1>
+          <h1 ref={headerRef}>
             <span>Hi folks! Carms here!</span>
           </h1>
           <p>I&apos;m a Full Stack Developer living in Tiohtiá:ke aka Montréal.</p>
