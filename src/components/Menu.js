@@ -48,7 +48,7 @@ export default function Menu({
     pausedRef.current = true;
 
     // Find the targeted scroll Position Y and scrollTo
-    const refIndex = parseInt(ev.target.dataset.index, 10);
+    const refIndex = parseInt(ev.currentTarget.dataset.index, 10);
     const currentRef = sectionRefs.current[refIndex];
     const top = currentRef.offsetTop;
     window.scrollTo({ top, behavior: 'smooth' });
@@ -68,7 +68,13 @@ export default function Menu({
   return (
     <MenuStyles isMenuOpen={isMenuOpen}>
       {menuItems.map(({ label, ref, type }) => {
-        if (type === 'anchor') return <a key={`menu-${ref}`} href={ref}>{label}</a>;
+        if (type === 'anchor') {
+          return (
+            <a key={`menu-${ref}`} href={ref} target="_blank" rel="noreferrer">
+              <span>{label}</span>
+            </a>
+          );
+        }
 
         return (
           <button
@@ -78,7 +84,7 @@ export default function Menu({
             onClick={handleClick}
             data-index={ref}
           >
-            {label}
+            <span>{label}</span>
           </button>
         );
       })}
@@ -117,11 +123,28 @@ const MenuStyles = styled.div`
   > button, > a {
     font-size: 2.5rem;
     text-align: left;
+    position: relative;
+    span {
+      position: relative;
+      z-index: 2
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 45%;
+      opacity: 0;
+      background: var(--yellow);
+      transition: all 0.5s ease;
+    }
+    &:hover:after {
+      opacity: 1;
+      width: 100%;
+    }
   }
 
-  > button:hover, > a:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 55%, rgba(255, 198, 0, 0.7) 35%);
-  }
 
   @media (min-width: 640px) {
     right: 0;
