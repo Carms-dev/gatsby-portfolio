@@ -50,7 +50,7 @@
     "stack": ["Python", "XML", "JavaScript", "Sass"],
     "image": "technolibre.png",
     "demo": "technolibre.mp4",
-    "website": "http://ellengallery.concordia.ca/what-is-a-weed/",
+    "website": "https://technolibre.ca/",
     "source": "https://github.com/ERPLibre/erplibre_theme_addons/tree/12.0",
     "isHobby": false
   },
